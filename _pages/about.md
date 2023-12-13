@@ -44,19 +44,20 @@ gallery7594:
     title: "Image 3 title caption"
 ---
 
-Hi there! I'm Hang, a graduate student at Northwestern University pursuing a Master of Science in Robotics degree with a focus on machine learning, computer vision, and control systems. I have a solid foundation in programming languages including Python, C++, C, and JavaScript, and am proficient in frameworks like ROS2 and PyTorch. I also have experience with embedded systems and have implemented algorithms for robotics projects such as quad-rotor control and mobile manipulation. My recent projects involve implementing Feature-based SLAM on a TurtleBot, ChatGPT-powered Robot Chef, and Edge-conditioned GCN for Sentiment Analysis. I am actively seeking full-time opportunities in the field of robotics and am excited to explore challenging projects that leverage my skills and interests.
+Hello, I'm Srikanth, a current M.S. in Robotics studen at Northwestern University! I am most interested in the field of mobile robotics, and I hope to use my skills and experience to develop interesting and impactful robots. I bring coding experience in ROS2, Python, C++, and C, as well as industry experience working in the field deploying robots. My most recent project involves a Hangman player using a 7-DOF robot arm. 
+<!-- Hi there! I'm Hang, a graduate student at Northwestern University pursuing a Master of Science in Robotics degree with a focus on machine learning, computer vision, and control systems. I have a solid foundation in programming languages including Python, C++, C, and JavaScript, and am proficient in frameworks like ROS2 and PyTorch. I also have experience with embedded systems and have implemented algorithms for robotics projects such as quad-rotor control and mobile manipulation. My recent projects involve implementing Feature-based SLAM on a TurtleBot, ChatGPT-powered Robot Chef, and Edge-conditioned GCN for Sentiment Analysis. I am actively seeking full-time opportunities in the field of robotics and am excited to explore challenging projects that leverage my skills and interests. -->
 
 ## Professional Experience
 
 <table>
   <tbody>
     <tr>
-      <td style = "border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/johnson-and-johnson.png" alt="j&j" width="60"></td>
+      <td style = "border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/gather.png" alt="gather" width="60"></td>
       <td style = "border-bottom-width:0;">
-<strong>Johnson & Johnson</strong> <br> 06/2023 - 09/2023 <br> Robotics & Controls Internship</td>
-      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/delta-lab.png" alt="nu" width="60"></td>
+<strong>Gather AI</strong> <br> 11/2020 - 06/2022 <br> Deployment/Field Operations Engineer</td>
+      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/hitachi.png" alt="nu" width="60"></td>
       <td style="border-bottom-width:0;">
-        <strong>Northwestern Delta Lab</strong> <br> 03/2021 - 06/2022 <br> Research Assistant</td>
+        <strong>Hitachi Rail STS</strong> <br> 06/2022 - 08/2023 <br> Associate Hardware Engineer</td>
     </tr>
   </tbody>
 </table>
@@ -68,11 +69,11 @@ Hi there! I'm Hang, a graduate student at Northwestern University pursuing a Mas
     <tr>
       <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/northwestern.jpg" alt="nu" width="60"></td>
       <td style="border-bottom-width:0;">
-        <strong>Northwestern University</strong> <br> 09/2022 - 12/2023 <br> M.S. in Robotics
+        <strong>Northwestern University</strong> <br> 09/2023 - 12/2024 <br> M.S. in Robotics
       </td>
-      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/northwestern.jpg" alt="nu" width="60"></td>
+      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/university-of-pittsburgh-logo.png" alt="pitt" width="60"></td>
       <td style="border-bottom-width:0;">
-        <strong>Northwestern University</strong> <br> 09/2019 - 06/2022 <br> B.S. with honors in Computer Science, <em>summa cum laude</em>
+        <strong>University of Pittsburgh</strong> <br> 08/2015 - 04/2020 <br> B.S. in Mechanical Engineering, Minor in Chemical Engineering
       </td>
     </tr>
   </tbody>
