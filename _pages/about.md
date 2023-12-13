@@ -71,7 +71,7 @@ Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern Universi
       <td style="border-bottom-width:0;">
         <strong>Northwestern University</strong> <br> 09/2023 - 12/2024 <br> M.S. in Robotics
       </td>
-      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/university-of-pittsburgh-logo.png" alt="pitt" width="60"></td>
+      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/Pitt.png" alt="pitt" width="60"></td>
       <td style="border-bottom-width:0;">
         <strong>University of Pittsburgh</strong> <br> 08/2015 - 04/2020 <br> B.S. in Mechanical Engineering, Minor in Chemical Engineering
       </td>

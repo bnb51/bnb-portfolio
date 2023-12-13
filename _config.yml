@@ -65,20 +65,20 @@ author:
       url: ""
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/hang-yin"
+      url: "https://github.com/Schelbert197"
     - label: "Email"
       icon: "fa fa-fw fa-envelope"
-      url: "mailto:hangyin2023@u.northwestern.edu"
+      url: "mailto:srikanthschelbert2024@u.northwestern.edu"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/hangyin0226/"
+      url: "https://www.linkedin.com/in/srikanth-schelbert/"
     
 
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/hang-yin"
+      url: "https://github.com/Schelbert197"
 
 defaults:
   # _posts
@@ -149,6 +149,13 @@ defaults:
       layout: single
       author_profile: false
       share: true
+  - scope:
+      path: ""
+      type: portfolio_test_items
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
 collections:
   portfolio:
@@ -170,6 +177,9 @@ collections:
     output: true
     permalink: /:collection/:path/
   portfolio_other:
+    output: true
+    permalink: /:collection/:path/
+  portfolio_test_items:
     output: true
     permalink: /:collection/:path/
 
