@@ -3,3 +3,5 @@ main:
     url: /about/
   - title: "Resume"
     url: https://raw.githubusercontent.com/hang-yin/portfolio/gh-pages/assets/YH-resume.pdf
+  # - title: "Test"
+  #   url: /test/

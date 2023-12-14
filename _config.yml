@@ -18,8 +18,8 @@ email:
 description: >- # this means to ignore newlines until "baseurl:"
   M.S. in Robotics Student
 twitter_username: username
-github_username: hang-yin
-minimal_mistakes_skin: dark # default
+github_username: Schelbert197
+minimal_mistakes_skin: 'mint' #dark # default
 search: true
 
 # Build settings
@@ -33,6 +33,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
+  - _test_items
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -151,7 +152,7 @@ defaults:
       share: true
   - scope:
       path: ""
-      type: portfolio_test_items
+      type: test_items
     values:
       layout: single
       author_profile: false
@@ -179,7 +180,7 @@ collections:
   portfolio_other:
     output: true
     permalink: /:collection/:path/
-  portfolio_test_items:
+  test_items:
     output: true
     permalink: /:collection/:path/
 

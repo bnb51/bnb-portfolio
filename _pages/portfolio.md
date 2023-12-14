@@ -9,6 +9,7 @@ collection3: portfolio_ML
 collection4: portfolio_mechatronics
 collection5: portfolio_web
 collection6: portfolio_other
+collection7: test_items
 sort_by: key
 entries_layout: grid
 classes: wide
