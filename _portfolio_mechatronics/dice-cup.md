@@ -23,8 +23,8 @@ This project simulates a die colliding in a spinning cup by modeling the Lagrang
 ## Video Demo
 <iframe
     width="100%"
-    height="100%"
-    src="/assets/images/Die_cup_edited.mp4"
+    height="500px"
+    src="/assets/images/Die_in_cup.mp4"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
@@ -38,7 +38,7 @@ To simulate this system, transformation matrices are used to represent the posit
 The Euler Lagrange equations are derived by finding the body velocities of the box and the die, defining the inertial matrices, calculating the kinetic energy and potential energy (so that we have the Lagrangian), and using the Lagrangian to derive the E-L equations. From these equations, the accelerations of the configuration are found and the system is simulated using RK4 integration over a 0.01 second timestep.
 
 ## Constraints
-The system is constrained by the impacts that keep the red die inside the blue box. Whenever an impact is detected by one of the 4 corners of the contacting one of the 4 edges of the box, the impact update equations will trigger in the simulation loop to reflect the appropriate dynamics of the system.  
+The system is constrained by the impacts that keep the red die inside the blue box. Whenever an impact is detected by one of the 4 corners of the contacting one of the 4 edges of the box, the impact update equations will trigger in the simulation loop to reflect the appropriate dynamics of the system. Each collision is considered a fully elastic collision between bodies which can be seen from the video above.
 
 ## External Forces
 There are two external forces acting on the system in this simulation. First, is a force that is equal to the force of the box due to gravity to keep it up. This force does not account for the impact of the die on the box, so it does fall slightly due to intertia as they impact each other. The second force is a rotation force on the box to give it an initial rotational velocity. This force has an inverse relationship with time so it provides an initial acceleration that decreases throughout the simulation.
