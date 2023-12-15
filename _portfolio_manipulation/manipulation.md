@@ -61,5 +61,8 @@ To calculate the control law, we need the current actual end-effector configurat
 
 The output of this part is the commanded end-effector twist expressed in the end-effector frame. To turn this into commanded wheel and arm joint speeds, we use the pseudoinverse of the mobile manipulator Jacobian Je(θ). 
 
+## Joint Limiting Exploration
+As a bonus activity, I explored adding joint limits to the youBot to simulate a more realistic scenario. In the CoppeliaSim program, the robot does not have limited joints, so the robot is able to cause collisions with itself if not constrained. To remedy this, I added a catch to evaluate whether the 3rd and 4th joints in the arm of the robot are greater than pi in the next state. If the condition yields true, then the joint positions and velocities are updated for the next state to ensure that they do not violate the constraint. Below is a video of the robot employing the joint constraints.
+
 <!-- ## Source code
 [Github repo](https://github.com/hang-yin/Mobile_Manipulation) -->
