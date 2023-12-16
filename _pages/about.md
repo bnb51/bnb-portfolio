@@ -79,7 +79,7 @@ Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern Universi
   </tbody>
 </table>
 
-
+<!-- 
 ## FIRST Robotics
 
 ### Team 5823 ACE
@@ -93,7 +93,15 @@ In 2018, I had the unique opportunity to co-found Team Mulan, the first all-girl
 
 ### Team 7594 Nautilus
 In 2019, seeing a need for more engineering exposure at my high school, I founded Team Nautilus, a robotics team with the mission of introducing younger students to the exciting world of engineering. Having the opportunity to mentor Team Nautilus from 2019 to 2020 was an immensely gratifying experience. It was a joy to share my passion for this field and to see these young individuals develop an interest of their own. Our efforts bore fruit beyond cultivating an interest in engineering among the students: our team was honored with the Highest Rookie Seed Award and the Rookie Inspiration Award at the Finger Lakes Regional. However, the real reward lay in seeing the sparks of curiosity ignite in the students, and knowing we had given them a valuable introduction to a field that had inspired me so deeply.
-{% include gallery id="gallery7594" %}
+{% include gallery id="gallery7594" %} -->
+
+## My Robotics Story
+
+### Getting Started
+I first experienced robotics in grade school creating combat robots using the LEGO Mindstorm NXT system. I enjoyed the blend of hardware and software challenges that pushed me to be more creative in my approach. Soon after, I participated in Carnegie Mellon's "Andrew's Leap" summer program making robots using Arduino boards. During this program, I made laser tag blasters, maze solving robots, and a system that identified firefly species by the flash pattern. This exposure to using real code and real hardware to solve problems, sparked an ongoing interest in the field.
+
+### Professional Experience
+Post graduation, I began working at Gather AI, a robotics startup committed to solving the data needs of logistics companies through drone-based inventory. 
 
 ## Leadership
 

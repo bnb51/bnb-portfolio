@@ -23,7 +23,7 @@ The aim of this project is to use the Franka Emika Panda 7-DoF arm to play the w
 ## Group Members
 This project was a group project including Ananya Agarwal, Graham Clifford, Ishani Narwankar, Abhishek Sankar, and Srikanth Schelbert
 
-## Video Demo
+<!-- ## Video Demo
 <iframe
     width="100%"
     height="50px"
@@ -32,9 +32,11 @@ This project was a group project including Ananya Agarwal, Graham Clifford, Isha
     allow="autoplay; encrypted-media"
     allowfullscreen
 >
-</iframe>
+</iframe> -->
 
 ## Overview
+This project is the culmination of 3 weeks of work showcasing the various skills and capabilities gained using ROS2 throughout the course. Our aim is that through playing hangman, our team can showcase robotic manipulation, Opitical Character Recognition (OCR), control theory, apriltag calibration, and system design and integration.
+
 The robot begins by initiating a "kickstart" sequence that draws the necessary lines on the board to make the game recognizable. This includes 5 dashes for the word to be guessed, 5 dashes for incorrect guesses, and the location for the hangman when incorrect guesses are made. Once this sequence is complete, then the gameplay loop initiates until the game is complete. The rules of the game are as follows:
 - The player shall win by correctly guessing the robot's chosen word before the whole stick figure is drawn.
 - The robot will always choose a 5 letter word at random.
@@ -43,14 +45,38 @@ The robot begins by initiating a "kickstart" sequence that draws the necessary l
 - The game ends either when the word is guessed (either letter-by-letter or all at once) or when the player has made 5 incorrect guesses.
 
 The steps of the robot's gameplay loop are as follows:
-1. Move to face the player and initiate the Opitical Character Recognition (OCR) pipeline.
+1. Move to face the player and initiate the OCR pipeline.
 2. Use the OCR pipeline to read the entry and confirm the confidence is high enough to publish to the game player node.
   - The OCR pipline will turn off once the guess is published.
 3. The player node processes the guess for correctness and evaluates what the robot will need to draw and where and publishes to the overall state machine.
 4. The state machine processes these characters and positions into poses and trajectories and sends these trajectories to the robot until everything is drawn.
 5. Upon completing the play, the robot then returns to facing the player described in step 1 unless the game has ended with a win or loss.
 
-## Calibration
+## A full Run
+<iframe
+    width="100%"
+    height="500px"
+    src="{{ site.url }}{{ site.baseurl }}/assets/images/Die_in_cup.mp4"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+>
+<!-- [Game_Full_Run](https://github.com/ME495-EmbeddedSystems/final-project-Schelbert197/assets/42013894/af983234-3d1a-4324-a0dd-5fc7fe0ac564) -->
+</iframe>
+
+### Video Recap
+In the video, the initial kickstart sequence is seen drawing the dashes to setup the game as well as the location in which the hangman will be drawn. Shortly after, I am seen showing the robot the letter "Q" that acts as my guess for the turn. Since the letter is not in the word that the robot chose, my guess is incorrect. This means the letter I guessed is written in the lower portion of the board and the first portion of the stick figure, the head, is drawn. 
+
+It is worth noting that the head looks "scruffy" due to the adjustment from the force feedback control. An added challenge that we chose as a group was to have the robot manipulate the marker without any additional aid from custom gripper attachments. While drawing, the robot will adjust to ensure that the admittance force is within the appropriate force range at each given waypoint on the trajectory. Due to flexion of the board, marker, and robot, this adjustment can be seen visually as it draws. 
+
+To demonstrate how the robot handles a full word (and a correct guess), the word "fight", which was chosen by the robot at the beginning of the game, is guessed. The robot is able to correctly draw the letters in the correct places. All letters are bubble letters, though due to error in the force control, some letters show up better than others. As mentioned, the force control adjusts at every point of the trajectory as it connects the dots. This means that the robot may not know it has fallen out of range until it reaches the next waypoint.
+
+Looking forward, there are some things that we seek to improve for optimized drawing and gameplay. First, a more highly tuned control loop that accounts for the robot having an easier time drawing upwards and sideways strokes than it does downward strokes would significantly improve the fidelity of the writing. Second, a more even distribution of some of the discrete points even on perfectly straight strokes, would allow for better evenness in the letters. 
+
+For future work, the team envisions a
+
+
+<!-- ## Calibration
 
  - Calibrating the robot relies on adding frames to the tf tree based on known geometry. 
  - The robot is sent to a calibration position, then given an april tag that aligns with the gripper frame. 
@@ -81,7 +107,7 @@ The steps of the robot's gameplay loop are as follows:
  - Training:
    - Epochs: 50
    - Batch Size: 16
-   - Learning Rate: 0.001
+   - Learning Rate: 0.001 -->
 
 ## Custom MoveIt Library
  - Overview:
