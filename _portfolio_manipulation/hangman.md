@@ -56,24 +56,25 @@ The steps of the robot's gameplay loop are as follows:
 <iframe
     width="100%"
     height="500px"
-    src="{{ site.url }}{{ site.baseurl }}/assets/images/Die_in_cup.mp4"
+    src="https://youtu.be/tvCiYLAyh-0"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
 >
-<!-- [Game_Full_Run](https://github.com/ME495-EmbeddedSystems/final-project-Schelbert197/assets/42013894/af983234-3d1a-4324-a0dd-5fc7fe0ac564) -->
 </iframe>
+<!-- [Game_Full_Run](https://youtu.be/tvCiYLAyh-0) -->
 
 ### Video Recap
 In the video, the initial kickstart sequence is seen drawing the dashes to setup the game as well as the location in which the hangman will be drawn. Shortly after, I am seen showing the robot the letter "Q" that acts as my guess for the turn. Since the letter is not in the word that the robot chose, my guess is incorrect. This means the letter I guessed is written in the lower portion of the board and the first portion of the stick figure, the head, is drawn. 
 
 It is worth noting that the head looks "scruffy" due to the adjustment from the force feedback control. An added challenge that we chose as a group was to have the robot manipulate the marker without any additional aid from custom gripper attachments. While drawing, the robot will adjust to ensure that the admittance force is within the appropriate force range at each given waypoint on the trajectory. Due to flexion of the board, marker, and robot, this adjustment can be seen visually as it draws. 
 
-To demonstrate how the robot handles a full word (and a correct guess), the word "fight", which was chosen by the robot at the beginning of the game, is guessed. The robot is able to correctly draw the letters in the correct places. All letters are bubble letters, though due to error in the force control, some letters show up better than others. As mentioned, the force control adjusts at every point of the trajectory as it connects the dots. This means that the robot may not know it has fallen out of range until it reaches the next waypoint.
+To demonstrate how the robot handles a full word (and a correct guess), I temporarily have the robot print the word it chose to the terminal. The word "fight", which was chosen by the robot at the beginning of the game, is my guess. The robot is able to correctly draw the letters in the correct places. All letters are bubble letters, though due to error in the force control, some letters show up better than others. As mentioned, the force control adjusts at every point of the trajectory as it connects the dots. This means that the robot may not know it has fallen out of range until it reaches the next waypoint.
 
+### Future Work
 Looking forward, there are some things that we seek to improve for optimized drawing and gameplay. First, a more highly tuned control loop that accounts for the robot having an easier time drawing upwards and sideways strokes than it does downward strokes would significantly improve the fidelity of the writing. Second, a more even distribution of some of the discrete points even on perfectly straight strokes, would allow for better evenness in the letters. 
 
-For future work, the team envisions a
+For future work, the team envisions a mode where the robot changes markers in between each play depending on whether the play was correct or incorrect. Some of the code for this was already written though it could not be effectively implemented in the time given before presentation.
 
 
 <!-- ## Calibration
@@ -133,6 +134,3 @@ For future work, the team envisions a
 
 ## Reference
  - Howard, A., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., Andreetto, M., & Adam, H. (2017). MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. [https://doi.org/10.48550/ARXIV.1704.04861](https://doi.org/10.48550/ARXIV.1704.04861) 
-
-## Group members
-Hang Yin, Katie Hughes, Liz Metzger, Alyssa Chen

@@ -31,6 +31,19 @@ This project simulates a die colliding in a spinning cup by modeling the Lagrang
 >
 </iframe>
 
+<iframe
+    width="100%"
+    height="500px"
+    src="https://youtu.be/WeqtbWp0uf0?feature=shared"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+>
+</iframe>
+
+---
+![Youtube video](https://youtu.be/WeqtbWp0uf0)
+
 ## Project Setup
 To simulate this system, transformation matrices are used to represent the position and orientation of the two objects in the world frame. From these dynamic transformations, static transformations from the centers are used to model the edges of the box and corners of the die. These are then used for impact.
 
