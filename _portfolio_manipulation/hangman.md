@@ -4,45 +4,34 @@ author_profile: true
 key: 1
 excerpt: "ROS2, MoveIt, OpenCV, Paddle OCR, Force Feedback Control"
 header:
-  teaser: /assets/images/jenga.gif
+  teaser: /assets/images/playing_game.gif
 classes: wide
+gallery7892:
+  - url: /assets/images/setting_up.gif
+    image_path: /assets/images/setting_up.gif
+    alt: "placeholder image 1"
+    title: "Image 1 title caption"
+  - url: /assets/images/playing_game.gif
+    image_path: /assets/images/playing_game.gif
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
 ---
-
-{% comment %} 
-sidebar:
-  - title: "Role"
-    image: http://placehold.it/350x250
-    image_alt: "logo"
-    text: "Designer, Front-End Developer"
-  - title: "Responsibilities"
-    text: "Reuters try PR stupid commenters should isn't a business model"
-{% endcomment %} 
 
 The aim of this project is to use the Franka Emika Panda 7-DoF arm to play the word game "hangman" with a human player in the loop.
 
 ## Group Members
-This project was a group project including Ananya Agarwal, Graham Clifford, Ishani Narwankar, Abhishek Sankar, and Srikanth Schelbert
-
-<!-- ## Video Demo
-<iframe
-    width="100%"
-    height="50px"
-    src="https://www.youtube.com/embed/aCotjAaHfwM"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe> -->
+This project is a group effort including Ananya Agarwal, Graham Clifford, Ishani Narwankar, Abhishek Sankar, and Srikanth Schelbert
 
 ## Overview
-This project is the culmination of 3 weeks of work showcasing the various skills and capabilities gained using ROS2 throughout the course. Our aim is that through playing hangman, our team can showcase robotic manipulation, Opitical Character Recognition (OCR), control theory, apriltag calibration, and system design and integration.
+This project is the culmination of 3 weeks of work showcasing the various skills and capabilities gained using ROS2 throughout the course. Our aim is that through playing hangman, our team can showcase robotic manipulation, Opitical Character Recognition (OCR), control theory, apriltag localization, and system design and integration.
 
-The robot begins by initiating a "kickstart" sequence that draws the necessary lines on the board to make the game recognizable. This includes 5 dashes for the word to be guessed, 5 dashes for incorrect guesses, and the location for the hangman when incorrect guesses are made. Once this sequence is complete, then the gameplay loop initiates until the game is complete. The rules of the game are as follows:
+The robot begins by initiating a "kickstart" sequence that localizes the board and draws the necessary lines on the board to make the game recognizable. This includes 5 dashes for the word to be guessed, 5 dashes for incorrect guesses, and the location for the hangman when incorrect guesses are made. Once this sequence is complete, then the gameplay loop initiates until the game is complete. The rules of the game are as follows:
 - The player shall win by correctly guessing the robot's chosen word before the whole stick figure is drawn.
 - The robot will always choose a 5 letter word at random.
 - The player may guess a letter or a 5 letter word at any point in the game.
 - All incorrect guesses will be counted equally.
 - The game ends either when the word is guessed (either letter-by-letter or all at once) or when the player has made 5 incorrect guesses.
+{% include gallery id="gallery7892" %}
 
 The steps of the robot's gameplay loop are as follows:
 1. Move to face the player and initiate the OCR pipeline.
@@ -52,17 +41,25 @@ The steps of the robot's gameplay loop are as follows:
 4. The state machine processes these characters and positions into poses and trajectories and sends these trajectories to the robot until everything is drawn.
 5. Upon completing the play, the robot then returns to facing the player described in step 1 unless the game has ended with a win or loss.
 
-## A full Run
-<iframe
-    width="100%"
-    height="500px"
-    src="https://youtu.be/tvCiYLAyh-0"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe>
-<!-- [Game_Full_Run](https://youtu.be/tvCiYLAyh-0) -->
+## Approach
+This project was divided into a few concise subsystems:
+- April Tag localization and calibration
+- Force Feedback control and motion planning
+- Gameplay and system state machine
+- CAD and gripper manipulation
+- OCR usage
+
+As the system integrator, main tasks included writing the gameplay node and the state machine for the overal system. 
+
+## Full Gameplay
+<iframe 
+width="560" 
+height="315" 
+src="https://www.youtube.com/embed/tvCiYLAyh-0?si=ZKbWAICDMrywSt-V" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
 
 ### Video Recap
 In the video, the initial kickstart sequence is seen drawing the dashes to setup the game as well as the location in which the hangman will be drawn. Shortly after, I am seen showing the robot the letter "Q" that acts as my guess for the turn. Since the letter is not in the word that the robot chose, my guess is incorrect. This means the letter I guessed is written in the lower portion of the board and the first portion of the stick figure, the head, is drawn. 
@@ -110,7 +107,7 @@ For future work, the team envisions a mode where the robot changes markers in be
    - Batch Size: 16
    - Learning Rate: 0.001 -->
 
-## Custom MoveIt Library
+<!-- ## Custom MoveIt Library
  - Overview:
    - This package allows us to move our robot around while also avoiding objects by using different services. 
  - GetCartesianPath:
@@ -133,4 +130,4 @@ For future work, the team envisions a mode where the robot changes markers in be
 [Github repo](https://github.com/hang-yin/Jenga-Assistance)
 
 ## Reference
- - Howard, A., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., Andreetto, M., & Adam, H. (2017). MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. [https://doi.org/10.48550/ARXIV.1704.04861](https://doi.org/10.48550/ARXIV.1704.04861) 
+ - Howard, A., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., Andreetto, M., & Adam, H. (2017). MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. [https://doi.org/10.48550/ARXIV.1704.04861](https://doi.org/10.48550/ARXIV.1704.04861)  -->
