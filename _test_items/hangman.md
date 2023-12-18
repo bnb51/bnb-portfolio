@@ -2,6 +2,7 @@
 title: "Hangman Game Player"
 author_profile: true
 key: 1
+toc: true
 excerpt: "ROS2, MoveIt, OpenCV, Paddle OCR, Force Feedback Control"
 header:
   teaser: /assets/images/playing_game.gif

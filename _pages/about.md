@@ -44,7 +44,9 @@ gallery7594:
     title: "Image 3 title caption"
 ---
 
-Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern University. I am most interested in the field of mobile robotics, and I hope to use my skills and experience to develop interesting and impactful robots. I bring coding experience in ROS2, Python, C++, and C, as well as industry experience working in the field deploying robots. My most recent project involves a Hangman player using a 7-DOF robot arm. 
+Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern University. I am most interested in the field of mobile robotics, and I hope to use my skills and experience to develop interesting and impactful robots. I bring coding experience with ROS2, Python, C++, and C, as well as multiple years of industry experience working in design and field robotics.
+
+My most recent projects involve simulation of dynamics, manipulation, and swarm robotics as well as manipulation of a a 7-DOF robot arm to play games with a human in the loop. Check them out on my main page!
 <!-- Hi there! I'm Hang, a graduate student at Northwestern University pursuing a Master of Science in Robotics degree with a focus on machine learning, computer vision, and control systems. I have a solid foundation in programming languages including Python, C++, C, and JavaScript, and am proficient in frameworks like ROS2 and PyTorch. I also have experience with embedded systems and have implemented algorithms for robotics projects such as quad-rotor control and mobile manipulation. My recent projects involve implementing Feature-based SLAM on a TurtleBot, ChatGPT-powered Robot Chef, and Edge-conditioned GCN for Sentiment Analysis. I am actively seeking full-time opportunities in the field of robotics and am excited to explore challenging projects that leverage my skills and interests. -->
 
 ## Professional Experience
@@ -52,12 +54,12 @@ Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern Universi
 <table>
   <tbody>
     <tr>
+      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/hitachi.png" alt="hitachi" width="60"></td>
+      <td style="border-bottom-width:0;">
+      <strong>Hitachi Rail STS</strong> <br> 06/2022 - 08/2023 <br> Associate Hardware Engineer</td>
       <td style = "border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/gather.png" alt="gather" width="60"></td>
       <td style = "border-bottom-width:0;">
-<strong>Gather AI</strong> <br> 11/2020 - 06/2022 <br> Deployment/Field Operations Engineer</td>
-      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/hitachi.png" alt="nu" width="60"></td>
-      <td style="border-bottom-width:0;">
-        <strong>Hitachi Rail STS</strong> <br> 06/2022 - 08/2023 <br> Associate Hardware Engineer</td>
+      <strong>Gather AI</strong> <br> 11/2020 - 06/2022 <br> Deployment/Field Operations Engineer</td>
     </tr>
   </tbody>
 </table>
@@ -78,22 +80,6 @@ Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern Universi
     </tr>
   </tbody>
 </table>
-
-<!-- 
-## FIRST Robotics
-
-### Team 5823 ACE
-In 2015, I had the privilege of founding Team 5823, a high school robotics team that, to my delight, expanded to include over 50 enthusiastic members during my tenure as captain from 2015 to 2018. Our journey was full of learning experiences, with one of the highlights being an unexpected feature on Chinese national television. To our astonishment, we emerged victorious in the International Division of the 2015 China Robotics Challenge. Encouraged by this accomplishment, we continued to participate and were honored with a win in the National Division in 2016. 
-{% include gallery id="gallery5823" %}
-
-
-### Team 7529 Mulan
-In 2018, I had the unique opportunity to co-found Team Mulan, the first all-girl robotics team in mainland China. As one of the mentors from 2018 to 2019, it was deeply rewarding to witness the team grow, attracting over 50 dedicated members. The journey wasn't without its challenges, but with concerted efforts, we managed to secure over 30,000 USD in sponsorships to support our endeavors. The creation of Team Mulan was driven not by a desire for accolades, but by a vision to encourage more girls in China to explore the fields of Science, Technology, Engineering, and Mathematics (STEM) and Robotics. At that time, these fields were largely dominated by male participants in China, and we believed in the importance of challenging this status quo. It's been an honor to play a part in inspiring and empowering these young women to pursue their interests and make their marks in the robotics arena.
-{% include gallery id="gallery7529" %}
-
-### Team 7594 Nautilus
-In 2019, seeing a need for more engineering exposure at my high school, I founded Team Nautilus, a robotics team with the mission of introducing younger students to the exciting world of engineering. Having the opportunity to mentor Team Nautilus from 2019 to 2020 was an immensely gratifying experience. It was a joy to share my passion for this field and to see these young individuals develop an interest of their own. Our efforts bore fruit beyond cultivating an interest in engineering among the students: our team was honored with the Highest Rookie Seed Award and the Rookie Inspiration Award at the Finger Lakes Regional. However, the real reward lay in seeing the sparks of curiosity ignite in the students, and knowing we had given them a valuable introduction to a field that had inspired me so deeply.
-{% include gallery id="gallery7594" %} -->
 
 ## My Robotics Story
 

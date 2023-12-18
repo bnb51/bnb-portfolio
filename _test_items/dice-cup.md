@@ -41,13 +41,16 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 
 ---
-<!-- ![Youtube video](https://youtu.be/WeqtbWp0uf0) -->
 
 ## Project Setup
-To simulate this system, transformation matrices are used to represent the position and orientation of the two objects in the world frame. From these dynamic transformations, static transformations from the centers are used to model the edges of the box and corners of the die. These are then used for impact.
+To simulate this system, transformation matrices are used to represent the position and orientation of the two objects in the world frame. From these dynamic transformations, static transformations from the centers are used to model the edges of the box and corners of the die. These are then used for impact, and the frame directionality is used for ease of calculation. These frames can be seen from the image below.
+
+![frames]({{ site.url }}{{ site.baseurl }}/assets/images/Jackbox.png)
 
 ## Euler Lagrange Equations
-The Euler Lagrange equations are derived by finding the body velocities of the box and the die, defining the inertial matrices, calculating the kinetic energy and potential energy (so that we have the Lagrangian), and using the Lagrangian to derive the E-L equations. From these equations, the accelerations of the configuration are found and the system is simulated using RK4 integration over a 0.01 second timestep.
+![EL]({{ site.url }}{{ site.baseurl }}/assets/images/EL_eqn.png)
+
+The Euler-Lagrange equations are critical for finding the instantaneous accelerations of the bodies. By finding the body velocities of the box and the die, defining the inertial matrices, and calculating the kinetic energy and potential energy (so that we have the Lagrangian), the equation shown above can be calculated for the configuration q. From these equations, the accelerations of the configuration are found, and the system is simulated using RK4 integration over a 0.01 second timestep.
 
 ## Constraints
 The system is constrained by the impacts that keep the red die inside the blue box. Whenever an impact is detected by one of the 4 corners of the contacting one of the 4 edges of the box, the impact update equations will trigger in the simulation loop to reflect the appropriate dynamics of the system. Each collision is considered a fully elastic collision between bodies which can be seen from the video above.
