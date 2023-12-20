@@ -3,45 +3,6 @@ permalink: /about/
 title: "About"
 toc: true
 classes: wide
-gallery5823:
-  - url: /assets/images/5823-1.jpg
-    image_path: /assets/images/5823-1.jpg
-    alt: "placeholder image 1"
-    title: "Image 1 title caption"
-  - url: /assets/images/5823-2.jpg
-    image_path: /assets/images/5823-2.jpg
-    alt: "placeholder image 2"
-    title: "Image 2 title caption"
-  - url: /assets/images/5823-3.jpg
-    image_path: /assets/images/5823-3.jpg
-    alt: "placeholder image 3"
-    title: "Image 3 title caption"
-gallery7529:
-  - url: /assets/images/7529-1.jpg
-    image_path: /assets/images/7529-1.jpg
-    alt: "placeholder image 1"
-    title: "Image 1 title caption"
-  - url: /assets/images/7529-2.jpg
-    image_path: /assets/images/7529-2.jpg
-    alt: "placeholder image 2"
-    title: "Image 2 title caption"
-  - url: /assets/images/7529-3.jpg
-    image_path: /assets/images/7529-3.jpg
-    alt: "placeholder image 3"
-    title: "Image 3 title caption"
-gallery7594:
-  - url: /assets/images/7594-1.jpg
-    image_path: /assets/images/7594-1.jpg
-    alt: "placeholder image 1"
-    title: "Image 1 title caption"
-  - url: /assets/images/7594-2.jpg
-    image_path: /assets/images/7594-2.jpg
-    alt: "placeholder image 2"
-    title: "Image 2 title caption"
-  - url: /assets/images/7594-3.jpg
-    image_path: /assets/images/7594-3.jpg
-    alt: "placeholder image 3"
-    title: "Image 3 title caption"
 ---
 
 Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern University. I am most interested in the field of mobile robotics, and I hope to use my skills and experience to develop interesting and impactful robots. I bring coding experience with ROS2, Python, C++, and C, as well as multiple years of industry experience working in design and field robotics. I am currently seeking roles in robotic software, autonomy, and control.

@@ -26,7 +26,9 @@ This project is a group effort including Ananya Agarwal, Graham Clifford, Ishani
 ## Overview
 This project is the culmination of 3 weeks of work showcasing the various skills and capabilities gained using ROS2 throughout the course. Our aim is that through playing hangman, our team can showcase robotic manipulation, Opitical Character Recognition (OCR), control theory, apriltag localization, and system design and integration.
 
-The robot begins by initiating a "kickstart" sequence that localizes the board and draws the necessary lines on the board to make the game recognizable. This includes 5 dashes for the word to be guessed, 5 dashes for incorrect guesses, and the location for the hangman when incorrect guesses are made. Once this sequence is complete, then the gameplay loop initiates until the game is complete. The rules of the game are as follows:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q81Vcnj9kqs?si=1wjmTJCnAVbmtEMv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The robot begins by initiating a "kickstart" sequence that localizes the board and draws the necessary lines on the board to make the game recognizable. This includes 5 dashes for the "secret" word, 5 dashes for incorrect guessed letters, and the location for the hangman when incorrect guesses are made. Once this sequence is complete, then the gameplay loop initiates until the game is complete. The rules of the game are as follows:
 - The player shall win by correctly guessing the robot's chosen word before the whole stick figure is drawn.
 - The robot will always choose a 5 letter word at random.
 - The player may guess a letter or a 5 letter word at any point in the game.
@@ -52,6 +54,21 @@ This project was divided into a few concise subsystems:
 
 As the system integrator, main tasks included writing the gameplay node and the state machine for the overal system. 
 
+## Custom MoveIt Library
+In order for this project to be viable, a task our team accomplished was writing a custom Python API for the robot to be able to move in space without issues with singularities.
+ - Overview:
+   - This package allows us to move our robot around while also avoiding objects by using different services. 
+ - GetCartesianPath:
+   - Moves the end-effector gripper in a straight line from start to end.
+   - Uses multiple intermediate waypoints to ensure straight path.
+ - GetPositionIK:
+   - Calculates possible joint positions of robot from a given start and end position and orientation for the end-effector.
+   - Used to Orient the gripper without shifting the position .
+   - Used to move the robot when straight movement is not necessary.   
+ - GetPlanningScene:
+   - The environment around the robot.
+   - This allows us to add in the table, camera, and jenga tower to avoid collisions .
+
 ## Full Gameplay
 <iframe 
 width="560" 
@@ -63,11 +80,11 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 
 ### Video Recap
-In the video, the initial kickstart sequence is seen drawing the dashes to setup the game as well as the location in which the hangman will be drawn. Shortly after, I am seen showing the robot the letter "Q" that acts as my guess for the turn. Since the letter is not in the word that the robot chose, my guess is incorrect. This means the letter I guessed is written in the lower portion of the board and the first portion of the stick figure, the head, is drawn. 
+In the video, the initial kickstart sequence is seen drawing the dashes to setup the game as well as the location in which the hangman will be drawn. Shortly after, I am seen showing the robot the letter "Q" that acts as my guess for the turn. Since the letter is not in the word that the robot chose, my guess is incorrect. This means the letter I guessed is written in the lower portion of the board (where wrong guesses go) and the first portion of the stick figure (the head) is drawn. 
 
-It is worth noting that the head looks "scruffy" due to the adjustment from the force feedback control. An added challenge that we chose as a group was to have the robot manipulate the marker without any additional aid from custom gripper attachments. While drawing, the robot will adjust to ensure that the admittance force is within the appropriate force range at each given waypoint on the trajectory. Due to flexion of the board, marker, and robot, this adjustment can be seen visually as it draws. 
+To demonstrate how the robot handles a full word (and a correct guess), I temporarily have the robot print the word it chose to the terminal. The word "fight", which was chosen by the robot at the beginning of this game, is my guess. The robot is able to correctly read the word and assess that I have won the game. It proceeds to draw the letters in the correct places. All letters are bubble letters, though as the robot draws, some letters show up better than others. The force admittance control adjusts at every point of the trajectory as it connects the dots. This means that the robot may not know it has fallen out of range until it reaches the next waypoint.
 
-To demonstrate how the robot handles a full word (and a correct guess), I temporarily have the robot print the word it chose to the terminal. The word "fight", which was chosen by the robot at the beginning of the game, is my guess. The robot is able to correctly draw the letters in the correct places. All letters are bubble letters, though due to error in the force control, some letters show up better than others. As mentioned, the force control adjusts at every point of the trajectory as it connects the dots. This means that the robot may not know it has fallen out of range until it reaches the next waypoint.
+It is worth noting that the head looks "scruffy" due to the  active adjustment from the force feedback control. An added challenge that we chose as a group was to have the robot manipulate the marker without any additional aid from custom gripper attachments. While drawing, the robot will adjust to ensure that the admittance force is within the appropriate force range at each given waypoint on the trajectory. Due to flexion of the board, marker, and robot, this adjustment can be seen visually as it draws. 
 
 ### Future Work
 Looking forward, there are some things that we seek to improve for optimized drawing and gameplay. First, a more highly tuned control loop that accounts for the robot having an easier time drawing upwards and sideways strokes than it does downward strokes would significantly improve the fidelity of the writing. Second, a more even distribution of some of the discrete points even on perfectly straight strokes, would allow for better evenness in the letters. 

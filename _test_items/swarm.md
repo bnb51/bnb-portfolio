@@ -29,7 +29,19 @@ gallery7832:
     image_path: /assets/images/Northwestern_N.png
     alt: "placeholder image 2"
     title: "Image 2 title caption"
-
+gallery7833:
+  - url: /assets/images/1_radius.png
+    image_path: /assets/images/1_radius.png
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
+  - url: /assets/images/2_radius.png
+    image_path: /assets/images/2_radius.png
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
+  - url: /assets/images/3_radius_sq.png
+    image_path: /assets/images/3_radius_sq.png
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
 ---
 
 ## Overview
@@ -54,6 +66,7 @@ Using this localization to create a coordinate system, the robots can decide whe
 
 The "Brazil Nut Effect" is a term stemming from scientists noticing that the larger nuts in Muesli cereal would migrate to the top of the box when shaken. This idea using either a vibration table (in the paper) or random motion (in this lab) can be adapted to swarm robotics allowing them to self-sort based on gradient for and relative "size."
 
+{% include gallery id="gallery7833" %}
 
 This project implements the algorithm described in the paper using the control points mentioned below. The sum of each vector allows the robots to eventually separate into groups of small (red), medium (green), and large (blue) radius robots. These trials were run with 1, 2, and 3 different sizes to ensure functionality of the algorithm.
 
@@ -63,7 +76,7 @@ The motion of each robot is governed by the following three forces:
 2. Random motion, which emulates the effect of vibration. 
 3. Repulsion from nearby robots, which emulates the relative "size" of the robot based on collision radius.
 
-The photos show the sorting with each of the 3 scenarios.
+The photos show the sorting with each of the 3 scenarios where the robots are sorted based on their size.
 
 ## Reynolds flocking
 ![flocking]({{ site.url }}{{ site.baseurl }}/assets/images/flock.png)

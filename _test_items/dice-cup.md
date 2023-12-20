@@ -50,7 +50,7 @@ To simulate this system, transformation matrices are used to represent the posit
 ## Euler Lagrange Equations
 ![EL]({{ site.url }}{{ site.baseurl }}/assets/images/EL_eqn.png)
 
-The Euler-Lagrange equations are critical for finding the instantaneous accelerations of the bodies. By finding the body velocities of the box and the die, defining the inertial matrices, and calculating the kinetic energy and potential energy (so that we have the Lagrangian), the equation shown above can be calculated for the configuration q. From these equations, the accelerations of the configuration are found, and the system is simulated using RK4 integration over a 0.01 second timestep.
+The Euler-Lagrange equations (shown in terms of L(q,qdot) above) are critical for finding the instantaneous accelerations of the bodies. By finding the body velocities of the box and the die, defining the inertial matrices, and calculating the kinetic energy and potential energy (so that we have the Lagrangian, L), the equation shown above can be calculated for each component of the configuration q. From these equations, the accelerations of the configuration are found, and the system is simulated using RK4 integration over a 0.01 second timestep.
 
 ## Constraints
 The system is constrained by the impacts that keep the red die inside the blue box. Whenever an impact is detected by one of the 4 corners of the contacting one of the 4 edges of the box, the impact update equations will trigger in the simulation loop to reflect the appropriate dynamics of the system. Each collision is considered a fully elastic collision between bodies which can be seen from the video above.
