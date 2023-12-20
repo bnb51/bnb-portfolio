@@ -21,11 +21,12 @@ gallery7892:
 The aim of this project is to use the Franka Emika Panda 7-DoF arm to play the word game "hangman" with a human player in the loop.
 
 ## Group Members
-This project is a group effort including Ananya Agarwal, Graham Clifford, Ishani Narwankar, Abhishek Sankar, and Srikanth Schelbert
+This project is a group effort including Ananya Agarwal, Graham Clifford, Ishani Narwankar, Abhishek Sankar, and Srikanth Schelbert.
 
 ## Overview
 This project is the culmination of 3 weeks of work showcasing the various skills and capabilities gained using ROS2 throughout the course. Our aim is that through playing hangman, our team can showcase robotic manipulation, Opitical Character Recognition (OCR), control theory, apriltag localization, and system design and integration.
 
+### Short Video
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q81Vcnj9kqs?si=1wjmTJCnAVbmtEMv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 The robot begins by initiating a "kickstart" sequence that localizes the board and draws the necessary lines on the board to make the game recognizable. This includes 5 dashes for the "secret" word, 5 dashes for incorrect guessed letters, and the location for the hangman when incorrect guesses are made. Once this sequence is complete, then the gameplay loop initiates until the game is complete. The rules of the game are as follows:
@@ -54,22 +55,34 @@ This project was divided into a few concise subsystems:
 
 As the system integrator, main tasks included writing the gameplay node and the state machine for the overal system. 
 
-## Custom MoveIt Library
-In order for this project to be viable, a task our team accomplished was writing a custom Python API for the robot to be able to move in space without issues with singularities.
- - Overview:
-   - This package allows us to move our robot around while also avoiding objects by using different services. 
- - GetCartesianPath:
-   - Moves the end-effector gripper in a straight line from start to end.
-   - Uses multiple intermediate waypoints to ensure straight path.
- - GetPositionIK:
-   - Calculates possible joint positions of robot from a given start and end position and orientation for the end-effector.
-   - Used to Orient the gripper without shifting the position .
-   - Used to move the robot when straight movement is not necessary.   
- - GetPlanningScene:
-   - The environment around the robot.
-   - This allows us to add in the table, camera, and jenga tower to avoid collisions .
+## OCR
+The OCR pipline employed the use of the open-source PaddleOCR toolkit due to its speed and accuracy. Because of the need to process single letters and full words written by the player, we needed to ensure that the OCR was capable of reading both effectively. By processing two image feeds each optimized either for single letters or full words, the pipeline then creates a guess with high confidence that can be passed to the hangman node.
 
-## Full Gameplay
+### OCR Videos
+#### Single Letter
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AS6wPhCgIyg?si=ZpbtZHKk6cS10wyy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+In this video, I am seen guessing the letter "R" which is correctly read by the OCR pipeline as shown in the terminal output. 
+
+#### Full Word
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FbqclfQHlN0?si=pU_dTm06T0Ri8jYf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+In this video, I am seen guessing a full word, in this case "FLOCK", which is again correctly read in the terminal output.
+
+These show the high fidelity of a read allowing the player to trust that the robot sees and understands their guess.
+
+## Custom MoveIt Library
+In order for this project to be viable, a main task our team accomplished was writing a custom Python API for the robot to be able to move in space without issues with singularities. This library also includes custom functions to run the force on the end effector for the control. The following capabilities were granted with the implementation of our functions:
+ - Calculating inverse kinematics to achieve the joint positions for a given pose.
+ - Calculating the torques/forces on the end effector.
+ - Queueing poses to create a trajectory.
+ - Planning and executing both cartesian paths and movements to given points.
+ - Replanning paths that violate the force admittance control.
+
+## Drawing Plans
+For the robot to draw the letters, it needs to know what to draw, how to draw it, and where. To do this, the board was broken into a 6x8 grid where each tile has a local origin as a reference for the drawn characters. The apriltag established the localization of these origin. Once the OCR pipeline sends a letter to the hangman player, it establishes the characters to be drawn along with positioning information. 
+
+This information then gets processed by the "brain" node which takes the characters (given as a list of string type items), creates a list of points (both poses and points along a path), and passes the information along to the relevant nodes to execute the drawing of each character. These points along a path to draw a character are created in reference to the size of a tile so they are implemented in relation to that frame. The "brain" node also acts as the state machine for the whole system meaning it tracks what the robot is doing at any given time. The brain iterates through all of the service and action calls until everything for the turn has been written, and then returns to the viewing position as described in the overview.
+
+## Full Gameplay (1x speed)
 <iframe 
 width="560" 
 height="315" 
@@ -91,61 +104,6 @@ Looking forward, there are some things that we seek to improve for optimized dra
 
 For future work, the team envisions a mode where the robot changes markers in between each play depending on whether the play was correct or incorrect. Some of the code for this was already written though it could not be effectively implemented in the time given before presentation.
 
-
-<!-- ## Calibration
-
- - Calibrating the robot relies on adding frames to the tf tree based on known geometry. 
- - The robot is sent to a calibration position, then given an april tag that aligns with the gripper frame. 
- - Once the camera can see the tag, it creates series of transforms from the camera to the tag and finally to the base of the robot. 
- - Calibration pose: 
-
-![Calibration Pose]({{ site.url }}{{ site.baseurl }}/assets/images/jenga-calibration.png)
-
-## Tower Detection
-
- - We detect the tower using the depth image from an Intel Realsense camera. 
- - Once the top of the tower and the table are found by generating contours on the depth image, we repeatedly scan between these locations looking for partially removed pieces. 
- - The starting orientation of the tower is determined through line detection in OpenCV. 
-
-![Tower Detection]({{ site.url }}{{ site.baseurl }}/assets/images/jenga-tower-detection.png)
-
-## Machine Learning for Hand Detection
-
- - Overview:
-   - We performed transfer learning on a deep neural network to help us detect whether there are hands in the scene so that the robot knows when it should look for a Jenga brick. 
- - Dataset:
-   - Video samples of the Jenga tower were taken and separated into two classes: with hand(s) and without hand(s) around. 
-   - 1000 images were extracted from each class. 
- - Model: 
-   - We performed transfer learning on a pretrained neural network - MobileNets
-   - The MobileNet we are using implements depth-wise separable convolutions to build light weight deep neural networks
-   - We only train the last layer of the MobileNet to perform our specific task
- - Training:
-   - Epochs: 50
-   - Batch Size: 16
-   - Learning Rate: 0.001 -->
-
-<!-- ## Custom MoveIt Library
- - Overview:
-   - This package allows us to move our robot around while also avoiding objects by using different services. 
- - GetCartesianPath:
-   - Moves the end-effector gripper in a straight line from start to end.
-   - Uses multiple intermediate waypoints to ensure straight path.
- - GetPositionIK:
-   - Calculates possible joint positions of robot from a given start and end position and orientation for the end-effector.
-   - Used to Orient the gripper without shifting the position .
-   - Used to move the robot when straight movement is not necessary.   
- - GetPlanningScene:
-   - The environment around the robot.
-   - This allows us to add in the table, camera, and jenga tower to avoid collisions .
-
-![MoveIt Visual]({{ site.url }}{{ site.baseurl }}/assets/images/jenga-moveit1.png)
-
-
-
-
 ## Source code
-[Github repo](https://github.com/hang-yin/Jenga-Assistance)
+[Github repo](https://github.com/Schelbert197/final-project-me495/tree/main)
 
-## Reference
- - Howard, A., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., Andreetto, M., & Adam, H. (2017). MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. [https://doi.org/10.48550/ARXIV.1704.04861](https://doi.org/10.48550/ARXIV.1704.04861)  -->
