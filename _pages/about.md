@@ -1,7 +1,7 @@
 ---
 permalink: /about/
 title: "About"
-toc: false
+toc: true
 classes: wide
 gallery5823:
   - url: /assets/images/5823-1.jpg
@@ -44,10 +44,9 @@ gallery7594:
     title: "Image 3 title caption"
 ---
 
-Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern University. I am most interested in the field of mobile robotics, and I hope to use my skills and experience to develop interesting and impactful robots. I bring coding experience with ROS2, Python, C++, and C, as well as multiple years of industry experience working in design and field robotics.
+Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern University. I am most interested in the field of mobile robotics, and I hope to use my skills and experience to develop interesting and impactful robots. I bring coding experience with ROS2, Python, C++, and C, as well as multiple years of industry experience working in design and field robotics. I am currently seeking roles in robotic software, autonomy, and control.
 
-My most recent projects involve simulation of dynamics, manipulation, and swarm robotics as well as manipulation of a a 7-DOF robot arm to play games with a human in the loop. Check them out on my main page!
-<!-- Hi there! I'm Hang, a graduate student at Northwestern University pursuing a Master of Science in Robotics degree with a focus on machine learning, computer vision, and control systems. I have a solid foundation in programming languages including Python, C++, C, and JavaScript, and am proficient in frameworks like ROS2 and PyTorch. I also have experience with embedded systems and have implemented algorithms for robotics projects such as quad-rotor control and mobile manipulation. My recent projects involve implementing Feature-based SLAM on a TurtleBot, ChatGPT-powered Robot Chef, and Edge-conditioned GCN for Sentiment Analysis. I am actively seeking full-time opportunities in the field of robotics and am excited to explore challenging projects that leverage my skills and interests. -->
+My most recent projects involve simulations of dynamics, manipulation, and swarm robotics as well as manipulation of a a 7-DOF robot arm to play games with a human in the loop. Check them out on my main page!
 
 ## Professional Experience
 
@@ -83,11 +82,19 @@ My most recent projects involve simulation of dynamics, manipulation, and swarm 
 
 ## My Robotics Story
 
-### Getting Started
-I first experienced robotics in grade school creating combat robots using the LEGO Mindstorm NXT system. I enjoyed the blend of hardware and software challenges that pushed me to be more creative in my approach. Soon after, I participated in Carnegie Mellon's "Andrew's Leap" summer program making robots using Arduino boards. During this program, I made laser tag blasters, maze solving robots, and a system that identified firefly species by the flash pattern. This exposure to using real code and real hardware to solve problems, sparked an ongoing interest in the field.
+### Professional Experiences
 
-### Professional Experience
-Post graduation, I began working at Gather AI, a robotics startup committed to solving the data needs of logistics companies through drone-based inventory. 
+#### Gather AI
+Professionally, I began working at Gather AI, a robotics startup committed to solving the data needs of logistics companies through drone-based inventory. While there, I had the privilege of fulfilling many roles in order to help the company succeed. I established processes and authored documentation that allowed Gather to reduce deployment times from months to days. I also was able to develop an autonomous charge pad that allowed customers to scan thousands of locations during off-shift hours without any human intervention. Lastly, I was heavily involved in creating tools to ensure that new features were backwards compatible as the company expanded in capabiliity and customer base. 
+
+Check out this video to see the customer success!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/94Nowr9WWps?si=v7kZrWAqWkP_EhJP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+#### Hitachi Rail STS
+At Hitachi I designed signals, switch machines, and other ground equipment necessary to keep trains on the right tracks at the right time. Along with these designed, I authored much of the techical documentation associated with these designs to ensure fidelity of the design, manufacturing, and assembly. The most notable projects I worked on include a second generation switch machine, Hitachi's flagship product, and 6-in LED signals. These projects required significant testing, documentation, and communication with clientele making them high-profile projects within the company.
+
+### Getting Started
+I first experienced robotics in grade school creating combat robots using the LEGO Mindstorm NXT system. I enjoyed the blend of hardware and software challenges that pushed me to be more creative in my approach. Soon after, I participated in Carnegie Mellon's "Andrew's Leap" summer program making robots using Arduino boards. During this program, I made laser tag blasters, maze solving robots, and a system that identified firefly species by the flash pattern. This exposure to real hardware and software sparked an ongoing interest in the field.
 
 ## Leadership
 
