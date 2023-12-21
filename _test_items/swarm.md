@@ -3,7 +3,7 @@ title: "Swarm Shape and Behavior Control"
 author_profile: true
 key: 8
 toc: true
-excerpt: "Distributed control, Swarm Robotics, Pygame"
+excerpt: "Distributed Control, Swarm Robotics, Pygame"
 header:
   teaser: /assets/images/3_radius.png
 classes: wide

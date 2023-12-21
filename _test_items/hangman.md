@@ -47,13 +47,15 @@ The steps of the robot's gameplay loop are as follows:
 
 ## Approach
 This project was divided into a few concise subsystems:
-- April Tag localization and calibration
-- Force Feedback control and motion planning
-- Gameplay and system state machine
-- CAD and gripper manipulation
-- OCR usage
+- April Tag localization and calibration.
+- Force Feedback control and motion planning.
+- Gameplay and system state machine.
+- CAD and gripper manipulation.
+- OCR usage.
 
-As the system integrator, main tasks included writing the gameplay node and the state machine for the overal system. 
+### Nodes
+The image below shows the relationship between each node in the package. As the system integrator, my main tasks included writing the gameplay node and the state machine for the overal system. I also proposed the architecture of the package we created since my "brain" node is most central in the web and tracks the state of the system. To keep things concise and mitigate errors that were difficult to trace or failed silently, we sought to keep communication between nodes on a need basis. The diagram shows these communications, and arrows indicate one-way communication.
+![flocking]({{ site.url }}{{ site.baseurl }}/assets/images/Node_diagram.png)
 
 ## OCR
 The OCR pipline employed the use of the open-source PaddleOCR toolkit due to its speed and accuracy. Because of the need to process single letters and full words written by the player, we needed to ensure that the OCR was capable of reading both effectively. By processing two image feeds each optimized either for single letters or full words, the pipeline then creates a guess with high confidence that can be passed to the hangman node.
@@ -74,13 +76,16 @@ In order for this project to be viable, a main task our team accomplished was wr
  - Calculating inverse kinematics to achieve the joint positions for a given pose.
  - Calculating the torques/forces on the end effector.
  - Queueing poses to create a trajectory.
- - Planning and executing both cartesian paths and movements to given points.
+ - Planning and executing both cartesian paths and MoveIt movements to given points.
  - Replanning paths that violate the force admittance control.
 
-## Drawing Plans
-For the robot to draw the letters, it needs to know what to draw, how to draw it, and where. To do this, the board was broken into a 6x8 grid where each tile has a local origin as a reference for the drawn characters. The apriltag established the localization of these origin. Once the OCR pipeline sends a letter to the hangman player, it establishes the characters to be drawn along with positioning information. 
+## April Tags
+We used an AprilTag to localize the board. Since the known shape and size of the tag can convey position and orientation, the tag provides the robot with a transformation to the board through the tf tree. The "tags" node also provides the information regarding the location in which the robot draws the letters guessed by the player.
 
-This information then gets processed by the "brain" node which takes the characters (given as a list of string type items), creates a list of points (both poses and points along a path), and passes the information along to the relevant nodes to execute the drawing of each character. These points along a path to draw a character are created in reference to the size of a tile so they are implemented in relation to that frame. The "brain" node also acts as the state machine for the whole system meaning it tracks what the robot is doing at any given time. The brain iterates through all of the service and action calls until everything for the turn has been written, and then returns to the viewing position as described in the overview.
+## Drawing Plans
+For the robot to draw the letters, it needs to know what to draw, how to draw it, and where. To do this, the board was broken into a 6x8 grid of 10cm by 10cm tiles where each tile has a local origin as a reference for the drawn characters. The apriltag established the localization of these origin. Once the OCR pipeline sends a letter to the hangman player, it establishes the characters to be drawn along with positioning information. 
+
+This information then gets processed by the "brain" node which takes the characters (given as a list of strings and tile coordinates) and generates a list of MoveIt poses and Cartesian trajectory paths using the "draw" node and our custom functions. These points along a path to draw a character are created in reference to the size of a tile so they are implemented in relation to that frame thanks to the "tags" node. The "brain" node also acts as the state machine for the whole system meaning it tracks what the robot is doing at any given time. The brain iterates through all of the service and action calls until everything for the turn has been written, and then returns to the viewing position as described in the overview.
 
 ## Full Gameplay (1x speed)
 <iframe 
@@ -105,5 +110,7 @@ Looking forward, there are some things that we seek to improve for optimized dra
 For future work, the team envisions a mode where the robot changes markers in between each play depending on whether the play was correct or incorrect. Some of the code for this was already written though it could not be effectively implemented in the time given before presentation.
 
 ## Source code
-[Github repo](https://github.com/Schelbert197/final-project-me495/tree/main)
+For more information about how to run the game, our approach, and our code, please visit my Github and explore the code.
+
+- [Github repo](https://github.com/Schelbert197/final-project-me495/tree/main)
 
