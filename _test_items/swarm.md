@@ -11,37 +11,38 @@ gallery7831:
   - url: /assets/images/hopcount.png
     image_path: /assets/images/hopcount.png
     alt: "placeholder image 1"
-    title: "Image 1 title caption"
+    title: "Original Hopcount"
   - url: /assets/images/N_prop.png
     image_path: /assets/images/N_prop.png
+    title: "Original Hopcount"
     alt: "placeholder image 2"
-    title: "Image 2 title caption"
+    title: "Propagating N"
   - url: /assets/images/N_near.png
     image_path: /assets/images/N_near.png
     alt: "placeholder image 1"
-    title: "Image 1 title caption"
+    title: "Nearly Complete N"
 gallery7832:
   - url: /assets/images/N_full.png
     image_path: /assets/images/N_full.png
     alt: "placeholder image 2"
-    title: "Image 2 title caption"
+    title: "Full N"
   - url: /assets/images/Northwestern_N.png
     image_path: /assets/images/Northwestern_N.png
     alt: "placeholder image 2"
-    title: "Image 2 title caption"
+    title: "N Inspiration"
 gallery7833:
   - url: /assets/images/1_radius.png
     image_path: /assets/images/1_radius.png
     alt: "placeholder image 2"
-    title: "Image 2 title caption"
+    title: "One Radius"
   - url: /assets/images/2_radius.png
     image_path: /assets/images/2_radius.png
     alt: "placeholder image 2"
-    title: "Image 2 title caption"
+    title: "Two Radii"
   - url: /assets/images/3_radius_sq.png
     image_path: /assets/images/3_radius_sq.png
     alt: "placeholder image 2"
-    title: "Image 2 title caption"
+    title: "Three Radii"
 ---
 
 ## Overview

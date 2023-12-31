@@ -10,12 +10,12 @@ classes: wide
 gallery7892:
   - url: /assets/images/setting_up.gif
     image_path: /assets/images/setting_up.gif
-    alt: "placeholder image 1"
-    title: "Image 1 title caption"
+    alt: "setting up"
+    title: "Setting Up"
   - url: /assets/images/playing_game.gif
     image_path: /assets/images/playing_game.gif
-    alt: "placeholder image 2"
-    title: "Image 2 title caption"
+    alt: "playing game"
+    title: "Playing Game"
 ---
 
 The aim of this project is to use the Franka Emika Panda 7-DoF arm to play the word game "hangman" with a human player in the loop.
@@ -55,7 +55,7 @@ This project was divided into a few concise subsystems:
 
 ### Nodes
 The image below shows the relationship between each node in the package. As the system integrator, my main tasks included writing the gameplay node and the state machine for the overal system. I also proposed the architecture of the package we created since my "brain" node is most central in the web and tracks the state of the system. To keep things concise and mitigate errors that were difficult to trace or failed silently, we sought to keep communication between nodes on a need basis. The diagram shows these communications, and arrows indicate one-way communication.
-![flocking]({{ site.url }}{{ site.baseurl }}/assets/images/Node_diagram.png)
+![Node_Diagram]({{ site.url }}{{ site.baseurl }}/assets/images/Node_diagram.png)
 
 ## OCR
 The OCR pipline employed the use of the open-source PaddleOCR toolkit due to its speed and accuracy. Because of the need to process single letters and full words written by the player, we needed to ensure that the OCR was capable of reading both effectively. By processing two image feeds each optimized either for single letters or full words, the pipeline then creates a guess with high confidence that can be passed to the hangman node.
