@@ -1,7 +1,7 @@
 ---
 title: "2D Die in a Cup Simulation from Scratch"
 author_profile: true
-key: 3
+key: 2
 excerpt: "Lagrangian Dynamics, SymPy"
 header:
   teaser: /assets/images/Die_cup_edited.gif

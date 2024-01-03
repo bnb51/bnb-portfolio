@@ -1,7 +1,7 @@
 ---
 title: "PincherX 100 Pen Thief"
 author_profile: true
-key: 20
+key: 6
 excerpt: "Computer vision, Manipulation, OpenCV, ROS2"
 header:
   teaser: /assets/images/pen_grab.png
