@@ -57,6 +57,11 @@ At Hitachi I designed signals, switch machines, and other ground equipment neces
 ### Getting Started
 I first experienced robotics in grade school creating combat robots using the LEGO Mindstorm NXT system. I enjoyed the blend of hardware and software challenges that pushed me to be more creative in my approach. Soon after, I participated in Carnegie Mellon's "Andrew's Leap" summer program making robots using Arduino boards. During this program, I made laser tag blasters, maze solving robots, and a system that identified firefly species by the flash pattern. This exposure to real hardware and software sparked an ongoing interest in the field.
 
+#### My First Real Robot!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PdYEdyLexsg?si=dBtEkiubt7kCBmCq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This robot was my first mobile robot written with real code. It runs a simple wall following algorithm on an Arduino Uno board sitting on a laser cut chassis. It uses infrared sensors to navigate with a bump sensor to acknowledge if it touches the righthand wall. While this robot was rudimentary in execution, it inspired my interest in mobile robots!
+
 ## Leadership
 
 ### Rowing
