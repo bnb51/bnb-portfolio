@@ -49,4 +49,4 @@ It should be noted that privileged information regarding part numbers, bill of m
 This design was successfully implemented by the transit authority within one month of completion.
 
 ### Disclaimer
-This design has been shared with the permission of Hitachi Rail STS. Private information regarding the design specifications, part numbers, and any vendor or customer information have been excluded from this post to 
+This design has been shared with the permission of Hitachi Rail STS. Private information regarding the design specifications, part numbers, and any vendor or customer information have been excluded from this post to protect the intellectual property of the company.
