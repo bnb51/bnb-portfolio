@@ -1,5 +1,5 @@
 ---
-title: "Hangman Game Player"
+title: "OCR Robot Arm Game Player"
 author_profile: true
 key: 1
 toc: true
