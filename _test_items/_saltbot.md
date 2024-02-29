@@ -1,15 +1,17 @@
 ---
-title: "KUKA youBot Mobile Manipulation"
+title: "Autonomous Salt Dispensing Robot"
 author_profile: true
-key: 3
+key: 30
 toc: true
-excerpt: "Trajectory Planning, Manipulation, Feedforward Control"
+excerpt: "3D SLAM, Planning, Navigation, ROS2, Nav2, RTABMap"
 header:
   teaser: /assets/images/KUKA_best_run.gif
 classes: wide
 ---
 
-The goal of this project is to showcase the fundamentals of robotic manipulation having the KUKA youBot move to pick up a cube from a known location and place it at another. The project plans a trajectory for the end-effector, arm, and chassis of the robot and uses a PI control loop with odometry to have the robot correctly complete the task. 
+The goal of this project is to create a robotic system that can dispense salt in an open space by autonomously mapping the space, planning a path to cover the free area, and navigating through the planned path. This is achieved through the use of the Clearpath Jackal robot with a Velodyne VLP16 3D lidar scanner. I used a custom planner integrated with rtabmap and the Nav2 stack in ROS2 Humble to command the robot. This project uses custom ROS2 nodes written in Python 3 and C++
+
+I chose this task as my individual winter project because I want to solve common problems that many people face while pursuing my passion for mobile robots. Walkway safety is a huge concern for anyone who lives in cold and icy places, and automating this process allows users to mitigate risk of falling and frostbite from the weather. While Chicago presented a warmer than usual winter, I still value this project both for the problem statement and for the 
 
 ## Video Demo
 <iframe 
@@ -21,21 +23,15 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen></iframe>
 
-## Reference Trajectory Generation
-To create the motion of the robot, I created the end-effector trajectory consisting of 8 distinct trajectory segments:
-  1. Move the gripper from its initial configuration to a "standoff" position above the cube.
-  2. Move the gripper down to a grasping position from the cube.
-  3. Close the gripper to grasp the cube.
-  4. Return to the first "standoff" position now holding the cube.
-  5. Move to the "standoff" position above the final position of the cube.
-  6. Move the gripper down to place the cube on the ground.
-  7. Release the cube from the gripper.
-  8. Return to the final "standoff" position above the cube.
+## Main Hardware Components
+  - Clearpath Jackal Robot running ROS2 Humble on Ubuntu 22.04
+  - Velodyne VLP16 3D lidar
+  - Custom Hitch Mechanism 
+  - Linksys E8450 Router with OpenWRT firmware 23.05
+  - User Laptop (also running ROS2 Humble on Ubuntu 22.04)
+  - AGRI-FAB Tow Broadcast Spreader Trailer
 
-As a part of this challenge, I created two unique trajectories with different initial and final placements of the cube to show robustness of the control of the robot.
-
-## youBot Kinematics Simulation
-To calculate the kinematics and simulate the manipulation of the robot, I wrote two main functions. The first function uses simple Euler integration to calculate the next state of the robot chassis, arm, and wheel joints using the following inputs:
+## Main Software Packages
 - The current configuration of the robot
 - The current joint velocities
 - The maximum velocity for the joints
