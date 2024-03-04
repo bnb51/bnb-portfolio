@@ -1,7 +1,7 @@
 ---
 title: "OCR Robot Arm Game Player"
 author_profile: true
-key: 1
+key: 2
 toc: true
 excerpt: "ROS2, MoveIt, OpenCV, Paddle OCR, Force Feedback Control"
 header:

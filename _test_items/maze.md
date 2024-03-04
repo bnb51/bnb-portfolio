@@ -1,7 +1,7 @@
 ---
 title: "Maze Solving Algorithms"
 author_profile: true
-key: 5
+key: 6
 toc: true
 excerpt: "Path Search Algorithms, Pygame"
 header:
