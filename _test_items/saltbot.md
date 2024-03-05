@@ -38,7 +38,7 @@ The above video demonstrates the robot traveling with the salt trailer it uses f
 ## High Level Overview
 To use this robot, the user first creates a map of the area using RTabmap on the robot. By driving the robot through teleoperation, the robot can use the Velodyne VLP16 lidar to create an occupancy grid describing the area of interest. 
 
-Once a map is present (either from real time mapping or from a presaved map), the user can call a series of services to have the robot autonomously cut the map into cells, plan a path of poses from cell to cell, and navigate to each waypoint in series using custom nodes and the Nav2 stack. 
+Once a map is present (either from real time mapping or from a presaved map), the user can call a series of services to have the robot autonomously cut the map into cells, plan a path of poses from cell to cell, and navigate to each waypoint in series using custom nodes and the Nav2 stack. To cover the area once as evenly as possible, the waypoints are generated in a way that creates a Hamilton Path where each point is visited once. This becomes a lawmowing like path.
 <!-- The below diagram describes the information flow of this system. This dose not describe every node in the system (some background dependencies are omitted), though it does describe the main approach to the problem. -->
 
 <!-- The second function I wrote serves as the control loop that ties the desired trajectory of the end effector to the actual motion of the end effector. A simple diagram of the control loop is seen below:
