@@ -9,12 +9,17 @@ header:
 classes: wide
 ---
 
-The goal of this project is to create a robotic system that can dispense salt in an open space by autonomously mapping the space, planning a path to cover the free area, and navigating through the planned path. This is achieved through the use of the Clearpath Jackal robot with a Velodyne VLP16 3D lidar scanner. I used a custom planner integrated with rtabmap and the Nav2 stack in ROS2 Humble to command the robot. This project uses custom ROS2 nodes written in Python 3 and C++
+The goal of this project is to create a robotic system that can dispense salt in an open space by autonomously mapping the space, planning a path to cover the free area, and navigating through the planned path. This is achieved through the use of the Clearpath Jackal robot with a Velodyne VLP16 3D lidar scanner. I used a custom planner integrated with RTABmap and the Nav2 stack in ROS2 Humble to command the robot. This project uses custom ROS2 nodes written in Python 3 and C++
 
 I chose this task as my individual winter project because I want to solve common problems that many people face while pursuing my passion for mobile robots. Walkway safety is a huge concern for anyone who lives in cold and icy places, and automating this process allows users to mitigate risk of falling and frostbite from the weather. While Chicago presented a warmer than usual winter, I still value this project both for the problem statement and for the opportunity to pursue desireable robotics skills. 
 
-## Video Demo
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x_r3QtYOPaI?si=EySl7sIvZ3BBynXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+I am still completing this project, so please enjoy the progress and check back for the conclusion of the post!
+
+## Outdoor
+### Video Demo
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ds8fOuWjql8?si=h1Npc1BC5I5yZ3La" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The above video demonstrates the robot traveling with the salt trailer it uses for this project.
 
 ## Main Hardware Components
   - Clearpath Jackal Robot running ROS2 Humble on Ubuntu 22.04
@@ -24,14 +29,23 @@ I chose this task as my individual winter project because I want to solve common
   - User Laptop (also running ROS2 Humble on Ubuntu 22.04)
   - AGRI-FAB Tow Broadcast Spreader Trailer
 
-## High Level Overview
-The below diagram describes the information flow of this system. This dose not describe every node in the system (some background dependencies are omitted), though it does describe the main approach to the problem.
+## Main Software Components
+  - RTABmap package (with dependencies)
+  - Nav2 Stack
+  - Custom Planner ROS2 Node (written in python) 
+  - Custom Waypoint Navigation Node (written in C++)
 
-The second function I wrote serves as the control loop that ties the desired trajectory of the end effector to the actual motion of the end effector. A simple diagram of the control loop is seen below:
-![control_loop]({{ site.url }}{{ site.baseurl }}/assets/images/youBot_control.png)
+## High Level Overview
+To use this robot, the user first creates a map of the area using RTabmap on the robot. By driving the robot through teleoperation, the robot can use the Velodyne VLP16 lidar to create an occupancy grid describing the area of interest. 
+
+Once a map is present (either from real time mapping or from a presaved map), the user can call a series of services to have the robot autonomously cut the map into cells, plan a path of poses from cell to cell, and navigate to each waypoint in series using custom nodes and the Nav2 stack. 
+<!-- The below diagram describes the information flow of this system. This dose not describe every node in the system (some background dependencies are omitted), though it does describe the main approach to the problem. -->
+
+<!-- The second function I wrote serves as the control loop that ties the desired trajectory of the end effector to the actual motion of the end effector. A simple diagram of the control loop is seen below:
+![control_loop]({{ site.url }}{{ site.baseurl }}/assets/images/youBot_control.png) -->
 
 ## Map Slicer Node
-To plan the path that the robot intends to take, the map slicer node handles a few tasks that make this possible. First, it listens to the /map topic from rtabmap to ensure that there is in fact a map to be used. If there is no map, the node will alert the user. This node is considered the overall planner for the system. 
+To plan the path that the robot intends to take, the map slicer node handles a few tasks that make this possible. First, it listens to the /map topic from rtabmap to ensure that there is in fact a map to be used. If there is no map, the node will alert the user. This node is considered the overall planner for the system.
 
 ### Creating waypoints
 If a map is present, the user may run the "lean_waypoints" service call which will generate waypoints that the robot can follow. This command involves a few steps:
@@ -66,9 +80,16 @@ If the action call succeeds, then the state will switch to "WAIT FOR GOAL RESPON
 
 Once feedback on a goal status is achieved (success, abort, etc.), then the node will respond to the planner. 
 
+### Indoor Planning Video Demo
+The video below shows the RViz screen as the robot moves through some of the middle waypoints sent from the planner. The red path shows the local plan it creates as it navigates from point to point. The dark parts of the map are occupied (obstacles) and the colored "shorelines" surrounding the dark areas is the high cost area that the robot attempts to avoid during it's planning. 
+
 <iframe width="270" height="480" src="https://www.youtube.com/embed/z3MtAmL7pZU" title="Saltbot indoor planning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+## Progress
+This post shows the progress achieved in 8 short weeks of Northwestern's winter quarter. Please check back soon for the conclusion of this project!
 
+## Source code
+Due to this project being in progress, the code cannot be shared at this time.
 
 <!-- ## Bonus Video Demo
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VQ7Lpov6QGI?si=AbYCmGih9wy6BYSO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
