@@ -45,7 +45,9 @@ Below is a video showing the robot moving in real life vs the blue odometry robo
 ## SLAM and Next Steps
 Now that the odometry is modeled, it is time to implement the SLAM algorithm. My EKF library can be summed into two main functions. First is the "predict" function that will use the odometry values and the sensor reading to predict where the robot should be. The next function is the "correct" function that will move the odometry frame to correct the green robot when it deviates from the red/ground truth robot.
 
-Below is a video showing the initial tests for the "predict" funciton in action. The flashing yellow marker show the simulated noise in the perception of the obstacle from the red robot's lidar. This is what the green robot uses as landmarks to localize. The white dots simulate the rays from the 2D lidar on the turtlebot. This will be used for the circle fitting on the real robot.
+Below is a video showing the initial tests for the "predict" funciton in action. The flashing yellow markers show the simulated noise in the perception of the obstacle from the red robot's lidar. This is what the green robot uses as landmarks to localize. The white dots simulate the rays from the 2D lidar on the turtlebot. This will be used for the circle fitting on the real robot.
+
+The green robot is seen following the blue robot because it does not yet have the functionality to correct as the red robot deviates from the path, but it does maintain connection with the blue becuase it is predicting correctly based on the odometry. With the correct function in place, the green robot will stay with the red robot even as the red and blue separate showing that it is able to process the landmarks seen in the environment.
 
 <iframe width="477" height="848" src="https://www.youtube.com/embed/gQeu4aqvpUw" title="EKF SLAM Predict Funtion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
