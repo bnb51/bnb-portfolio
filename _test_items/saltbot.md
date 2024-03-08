@@ -36,37 +36,36 @@ The above video demonstrates the robot traveling with the salt trailer it uses f
   - Custom Waypoint Navigation Node (written in C++)
 
 ## High Level Overview
-To use this robot, the user first creates a map of the area using RTabmap on the robot. By driving the robot through teleoperation, the robot can use the Velodyne VLP16 lidar to create an occupancy grid describing the area of interest. 
+The below diagram describes the information flow of this system. This shows the general information flow between the Jackal robot, the Nav2 stack, the RTABmap stack, and the nodes I created for this project. The green node stacks refer to sets of nodes that are dependent on each other and are from the same or related packages.
+![control_loop]({{ site.url }}{{ site.baseurl }}/assets/images/saltbot_nodes.png)
 
-Once a map is present (either from real time mapping or from a presaved map), the user can call a series of services to have the robot autonomously cut the map into cells, plan a path of poses from cell to cell, and navigate to each waypoint in series using custom nodes and the Nav2 stack. To cover the area once as evenly as possible, the waypoints are generated in a way that creates a Hamilton Path where each point is visited once. This becomes a lawmowing like path.
-<!-- The below diagram describes the information flow of this system. This dose not describe every node in the system (some background dependencies are omitted), though it does describe the main approach to the problem. -->
+To use this robot, the user first creates a map of the area using RTABmap on the robot. By driving the robot through teleoperation, the robot can use the Velodyne VLP16 lidar to create an occupancy grid describing the area of interest. 
 
-<!-- The second function I wrote serves as the control loop that ties the desired trajectory of the end effector to the actual motion of the end effector. A simple diagram of the control loop is seen below:
-![control_loop]({{ site.url }}{{ site.baseurl }}/assets/images/youBot_control.png) -->
+Once a map is present (either from real time mapping or from a pre-saved map), the user can call a series of services to have the robot autonomously cut the map into cells, plan a path of poses from cell to cell, and navigate to each waypoint in series using custom nodes and the Nav2 stack. To cover the area once as evenly as possible, the waypoints are generated in a way that creates a Hamilton Path where each point is visited once. This becomes a lawmowing like path.
 
 ## Map Slicer Node
 To plan the path that the robot intends to take, the map slicer node handles a few tasks that make this possible. First, it listens to the /map topic from rtabmap to ensure that there is in fact a map to be used. If there is no map, the node will alert the user. This node is considered the overall planner for the system.
 
 ### Creating waypoints
-If a map is present, the user may run the "lean_waypoints" service call which will generate waypoints that the robot can follow. This command involves a few steps:
-1. Naively place a waypoint of the specified radius anywhere it can fit within an open space.
+If a map is present, the user may run the service call `ros2 service call lean_waypoints std_srvs/srv/Empty` which will generate waypoints that the robot can follow. This command involves a few steps:
+1. Naively place a waypoint of the specified cell radius anywhere within an open space that meets the criteria.
 2. Run through each waypoint generated, and remove waypoints that are islands or peninsulas (only having 0 or 1 neighbor) to eliminate any waypoints that are unreachable or could trap the robot.
 - Since the robot has the trailer, the assumption is that it may not back up.
-3. Add an orientation for the robot to have at each waypoint so that it sets up a heading for the next waypoint.
+3. Add an orientation to each waypoint for the robot so that it sets up a heading for the next waypoint.
 4. Save the waypoints and publish them as a set of markers to be visualized in Rviz.
 
-It is worth noting that a purple puck indicates the area of a waypoint, and the green arrow shows the orientation or heading for the robot. The image below shows a map created in rviz from a Gazebo simulation where the pucks have been placed in the confidently open spaces and the arrows show the direction of travel for the robot to take a "lawnmower" like path.
+A purple puck marker indicates the area of a waypoint cell, and the green arrow shows the orientation or heading for the robot. The image below shows a map created in rviz from a Gazebo simulation where the pucks have been placed in the confidently open spaces and the arrows show the direction of travel for the robot to take a "lawnmower" like path.
 
 ![sim_path]({{ site.url }}{{ site.baseurl }}/assets/images/sim_path.png)
 
 ### Traveling
-Once the plan has been written, the user can call the "travel" service that initiates the robot. When the service is called, the state machine will leave the "IDLE" state and switch to the "SEND GOAL" state where the robot will plan a path to the first waypoint. The "SEND GOAL" state interfaces with the nav_node which calls the nav to waypoint action client. The planner then waits in the "AWAITING GOAL COMPLETION" state and echoes the current goal. After some time, the nav_node will respond with either "Succeeded", "Aborted", "Canceled" or "Unknown Error" messages which the planner state machine can triage. 
+Once the plan has been written, the user can call the service `ros2 service call travel std_srvs/srv/Empty` that initiates the robot. When the service is called, the state machine will leave the "IDLE" state and switch to the "SEND GOAL" state where the robot will plan a path to the first waypoint. The "SEND GOAL" state interfaces with the nav_node which calls the nav to waypoint action client. The planner then waits in the "AWAITING GOAL COMPLETION" state and echoes the current goal. After some time, the nav_node will respond with either "Succeeded", "Aborted", "Canceled" or "Unknown Error" messages which the planner state machine can triage. 
 
 If the message reads "Succeeded", the planner state machine then switches to the "SEND GOAL" state again and sends the next waypoint to nav_node to plan with Nav2. The image below shows the red path that the robot will take to the next waypoint accounting for the obstacle inflation cost. If there are no more waypoints from the original plan, then the state machine returns to "IDLE" with a message indicating to the user that the route was successfully completed. 
 
 If the message reads "Aborted", the planner state machine will check a flag deciding to reset upon abort. If the flag reads true, the state machine returns to "IDLE" and removes any progress of the overall plan. If the flag reads false, the state machine will alert the user that it is skipping that waypoint in the plan and is looking to move to the next waypoint in the plan. It will switch to the "SEND GOAL" state, send the pose of the waypoint at the next index, and then await completion of the next move. 
 
-In the case that the response is either "Canceled" or "Uknown Error", the state machine simply clears the progress and resets to idle. The user can replan at any time. 
+In the case that the response is either "Canceled" or "Uknown Error", the state machine simply clears the progress and resets to idle. The user can replan at any time. If the robot is misbehaving or the mission needs to be cancelled, the user can simply run the service `ros2 service call saltbot_cancel_nav std_srvs/srv/Empty` which will cancel a movement to a waypoint cleanly (rather than killing the nav node or using the E-stop button).
 
 ![local_nav]({{ site.url }}{{ site.baseurl }}/assets/images/local_nav.png)
 
