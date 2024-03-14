@@ -87,11 +87,8 @@ The video below shows the RViz screen as the robot moves through some of the mid
 ## Progress
 This post shows the progress achieved in 8 short weeks of Northwestern's winter quarter. Please check back soon for the conclusion of this project!
 
-## Source code
-Due to this project being in progress, the code cannot be shared at this time.
-
 <!-- ## Bonus Video Demo
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VQ7Lpov6QGI?si=AbYCmGih9wy6BYSO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VQ7Lpov6QGI?si=AbYCmGih9wy6BYSO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
 
 ## Source code
-[Github repo](https://github.com/Schelbert197/modern_robotics_projects/tree/main/modern_robotics_projects/Schelbert_Srikanth_capstone_project) -->
+[Github repo](https://github.com/Schelbert197/saltbot.git)
