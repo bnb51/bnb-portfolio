@@ -5,7 +5,7 @@ key: 35
 toc: true
 excerpt: "EKF SLAM, ROS2, CMake, Turtlebot3"
 header:
-  teaser: /assets/images/slam.gif
+  teaser: /assets/images/slam_sim_noise.gif
 classes: wide
 ---
 
@@ -51,12 +51,17 @@ Below is a video showing the initial tests for the "predict" funciton in action.
 
 The green robot is seen following the blue robot because it does not yet have the functionality to correct as the red robot deviates from the path, but it does maintain connection with the blue becuase it is predicting correctly based on the odometry. With the correct function in place, the green robot will stay with the red robot even as the red and blue separate showing that it is able to process the landmarks seen in the environment.
 
-<iframe width="477" height="848" src="https://www.youtube.com/embed/gQeu4aqvpUw" title="EKF SLAM Predict Funtion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="480" height="400" src="https://www.youtube.com/embed/gQeu4aqvpUw" title="EKF SLAM Predict Funtion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Correction
 The below video demonstrates the behavior of the turtlebots when the correct function is being used. The green (SLAM) robot following the red (ground truth) robot rather than the blue (odom) robot after encountering an obstacle shows that the SLAM correction works. As seen when the odometry arrows are removed, the green and red paths are coincident rather than the green and blue paths. Furthermore, the axes for the map and odom frames, which begin coincident at the start of the simulation, separate to shows that the map --> odom frame transformation is accounting for the correction created by the EKF SLAM algorithm.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B0yq_Qks_T8?si=tz6ws4SWiYU6GrXt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### Correction with Simulated Noise
+The video below demonstrates the same motion, but now there is added noise to the sensor readings and odometry. The range of the sensor is also limited meaning that the robot can no longer sense all obstacles at once. Here the algorithm is still shown to function and the green odom frame can be seen correcting for the collision.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tO0pKSStVLU?si=_zhC-Cle1KI7s_Zd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Source code
 Due to this project being in progress, the code cannot be shared at this time.
