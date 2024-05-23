@@ -1,10 +1,10 @@
 # My Contact Information
 
 ## Email
-**srikanthschelbert@gmail.com**
+**breburns85@gmail.com**
 
 ## Phone
-**(319) 631-9522**
+**(412) 996-0167**
 
 ## Linkedin
-[LinkedIn](https://www.linkedin.com/in/srikanth-schelbert/)
+[LinkedIn](https://www.linkedin.com/in/breanna-n-burns/)

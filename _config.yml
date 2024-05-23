@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Srikanth Schelbert
+title: Breanna Burns
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  M.S. in Robotics Student
+  B.S Computer Science Graduate
 twitter_username: username
-github_username: Schelbert197
-minimal_mistakes_skin: 'mint' #dark # default
+github_username: bnb51
+minimal_mistakes_skin: 'sunrise' #dark # default
 search: true
 
 # Build settings
@@ -57,29 +57,29 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Srikanth Schelbert"
-  avatar : "/assets/images/bio-photo1.png"
-  bio    : "MS in Robotics @ Northwestern"
+  name   : "Breanna Burns"
+  avatar : "/assets/images/bre_headshot.png"
+  bio    : "BS Computer Science Graduate from Pitt"
   links:
-    - label: "Evanston, IL"
+    - label: "Pittsburgh, PA"
       icon: "fas fa-fw fa-map-marker-alt"
       url: ""
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/Schelbert197"
+      url: "https://github.com/bnb51"
     - label: "Email"
       icon: "fa fa-fw fa-envelope"
-      url: "mailto:srikanthschelbert2024@u.northwestern.edu"
+      url: "mailto:breburns85@gmail.com"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/srikanth-schelbert/"
+      url: "https://www.linkedin.com/in/breanna-n-burns/"
     
 
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/Schelbert197"
+      url: "https://github.com/bnb51"
 
 defaults:
   # _posts
@@ -112,7 +112,7 @@ defaults:
       path: ""
       type: portfolio_manipulation
     values:
-      layout: single
+      layout: 
       author_profile: false
       share: true
   - scope:
