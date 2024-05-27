@@ -5,48 +5,51 @@ toc: true
 classes: wide
 ---
 
-Hello! I'm Srikanth, a current M.S. in Robotics student at Northwestern University. I am most interested in the field of mobile robotics, and I hope to use my skills and experience to develop interesting and impactful robots. I bring coding experience with ROS2, Python, C++, and C, as well as multiple years of industry experience working in design and field robotics. I am currently seeking roles in robotic software, autonomy, and control.
+Hello! I'm Breanna, a recent B.S. Computer Science graduate from the University of Pittsburgh. My passion lies in the field of digital forensics analysis, and I am currently seeking job opportunities in digital forensics and data analysis where I can apply my skills to analyze complex data, uncover critical insights, and support vital investigations.
 
-My most recent projects involve simulations of dynamics, manipulation, and swarm robotics as well as manipulation of a a 7-DOF robot arm to play games with a human in the loop. Check them out on my main page!
+Throughout my academic career, I have developed a solid foundation in computer science principles, coupled with hands-on project experience in various programming languages and technologies. I am proficient in Java, Python, HTML, and SQL, along with a background in database management and data analysis. I have experience deriving insights from datasets and have worked with tools and techniques used for statistical analysis and data visualization such as myplotlib and pandas. My coursework and projects have honed my analytical abilities, problem-solving skills, and attention to detail, which are crucial for a career in digital forensics.
 
-## Professional Experience
+My minor in Law, Criminal Justice, and Society has provided me with a comprehensive understanding of the legal system and the societal impacts of crime. I have taken classes and labs focused on forensics and criminalistics, giving me practical experience in examining evidence and understanding criminal procedures. This interdisciplinary knowledge allows me to bridge the gap between technical expertise and legal requirements, ensuring that digital evidence is handled correctly and effectively.
 
-<table>
-  <tbody>
-    <tr>
-      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/hitachi.png" alt="hitachi" width="60"></td>
-      <td style="border-bottom-width:0;">
-      <strong>Hitachi Rail STS</strong> <br> 06/2022 - 08/2023 <br> Associate Hardware Engineer</td>
-      <td style = "border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/gather.png" alt="gather" width="60"></td>
-      <td style = "border-bottom-width:0;">
-      <strong>Gather AI</strong> <br> 11/2020 - 06/2022 <br> Deployment/Field Operations Engineer</td>
-    </tr>
-  </tbody>
-</table>
+I am particularly interested in uncovering and analyzing digital evidence to help solve cybercrimes and support legal investigations. My goal is to work with law enforcement agencies, private firms, or cybersecurity teams to protect digital assets and provide critical evidence for criminal cases.
 
 ## Education
 
 <table>
   <tbody>
     <tr>
-      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/northwestern.jpg" alt="nu" width="60"></td>
-      <td style="border-bottom-width:0;">
-        <strong>Northwestern University</strong> <br> 09/2023 - 12/2024 <br> M.S. in Robotics
-      </td>
       <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/Pitt.png" alt="pitt" width="60"></td>
       <td style="border-bottom-width:0;">
-        <strong>University of Pittsburgh</strong> <br> 08/2015 - 04/2020 <br> B.S. in Mechanical Engineering, Minor in Chemical Engineering
+        <strong>University of Pittsburgh</strong> <br> 08/2019 - 04/2024 <br> B.S. in Computer Science, Minor in Law, Criminal Justice and Society
       </td>
     </tr>
   </tbody>
 </table>
 
-## My Robotics Story
 
+## Professional Experience
+
+<table>
+  <tbody>
+    <tr>
+      <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/Pitt.png" alt="pitt" width="60"></td>
+      <td style="border-bottom-width:0;">
+      <strong>University of Pittsburgh</strong> <br> 08/2022 - 05/2024 <br> Assistant Rowing Coach</td>
+      <td style = "border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/gather.png" alt="gather" width="60"></td>
+      <td style = "border-bottom-width:0;">
+      <strong>Steel City Rowing Club</strong> <br> 05/2021 - Present <br> Varsity Youth Rowing Coach</td>
+    </tr>
+  </tbody>
+</table>
+
+## My Story
+
+<!--
 ### Professional Experiences
 
 #### Gather AI
 Professionally, I began working at Gather AI, a robotics startup committed to solving the data needs of logistics companies through drone-based inventory. While there, I had the privilege of fulfilling many roles in order to help the company succeed. I established processes and authored documentation that allowed Gather to reduce deployment times from months to days. I also was able to develop an autonomous charge pad that allowed customers to scan thousands of locations during off-shift hours without any human intervention. Lastly, I was heavily involved in creating tools to ensure that new features were backwards compatible as the company expanded in capabiliity and customer base. 
+
 
 Check out this video to see the customer success!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/94Nowr9WWps?si=v7kZrWAqWkP_EhJP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -62,10 +65,12 @@ I first experienced robotics in grade school creating combat robots using the LE
 
 This robot was my first mobile robot written with real code. It runs a simple wall following algorithm on an Arduino Uno board sitting on a laser cut chassis. It uses infrared sensors to navigate with a bump sensor to acknowledge if it touches the righthand wall. While this robot was rudimentary in execution, it inspired my interest in mobile robots!
 
+-->
+
 ## Leadership
 
 ### Rowing
-For 9 years, I competed in the sport of rowing, and had the privilege to compete at the high school, collegiate, and club levels of racing. These years taught me lessons in consistency, grit, and time management, all of which were prerequisites for the medals earned. During my time competing, I was granted the honor of Team Captain both in high school and college for my commitment to the team and efforts to lead by example. I also was chosen to be my college team's Equipment Manager due to my organizational skills and technical understanding of repairs, purchasing, and care for the equipment in our fleet. 
+For 9 years, I competed in the sport of rowing, and had the privilege to compete at the high school, collegiate, and club levels of racing. These years taught me lessons in consistency, grit, and time management, all of which were prerequisites for the medals earned. I also was chosen to be my college team's Equipment Manager due to my organizational skills and technical understanding of repairs, purchasing, and care for the equipment in our fleet. 
 
 ### Coaching
 Apart from strict competition, I also had the opportunity to take up coaching for 6 years at the high school and collegiate levels. Teaching and sharing knowledge is a passion of mine, and having the ability to shape young athletes into fierce competitors has been a real treat. At the high school level, I have been able guide students to recruitment at colleges of their choice. At the collegiate level, I have been able to push my athletes to compete on the national level against their fellow students. Seeing these athletes compete and win against their peers has brought me a lot of joy both from the impact I have been able to make as well as from the feelings I know we have shared during races. Igniting curiosity and a willingness to succeed is a trait I hope to bring to any team in which I participate, and while I focus solely on robotics, I am excited for those opportunities that lie ahead.
