@@ -10,6 +10,7 @@ collection4: portfolio_mechatronics
 collection5: portfolio_web
 collection6: portfolio_other
 collection7: test_items
+collection8: bre_projects
 sort_by: key
 entries_layout: grid
 classes: wide

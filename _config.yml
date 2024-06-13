@@ -34,6 +34,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 include:
   - _pages
   - _test_items
+  - _bre_projects
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -157,6 +158,13 @@ defaults:
       layout: single
       author_profile: false
       share: true
+  - scope:
+      path: ""
+      type: bre_projects
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
 collections:
   portfolio:
@@ -182,6 +190,9 @@ collections:
     permalink: /:collection/:path/
   test_items:
     output: true
+    permalink: /:collection/:path/
+  bre_projects:
+    output: true 
     permalink: /:collection/:path/
 
 category_archive:

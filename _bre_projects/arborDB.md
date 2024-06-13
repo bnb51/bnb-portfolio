@@ -5,7 +5,7 @@ key: 1
 toc: true
 excerpt: "Java, PostgresSQL, Database Management"
 header:
-  teaser: /assets/images/saltbot.gif
+  teaser: /bre_images/arborDB_diagram.png
 classes: wide
 ---
 ## Group Members
