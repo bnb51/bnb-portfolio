@@ -5,7 +5,7 @@ key: 1
 toc: true
 excerpt: "Python, Data Analysis, Privacy"
 header:
-  teaser: /bre_images/sci_design.png
+  teaser: /bre_images/abac-teaser.png
 classes: wide
 ---
 ## Overview

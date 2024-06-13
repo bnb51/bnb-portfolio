@@ -5,7 +5,7 @@ key: 1
 toc: true
 excerpt: "Python, Data Security"
 header:
-  teaser: /assets/images/saltbot.gif
+  teaser: /bre_images/mond-teaser.png
 classes: wide
 ---
 ## Project Overview

@@ -35,7 +35,7 @@ I am particularly interested in uncovering and analyzing digital evidence to hel
       <td style="border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/Pitt.png" alt="pitt" width="60"></td>
       <td style="border-bottom-width:0;">
       <strong>University of Pittsburgh</strong> <br> 08/2022 - 05/2024 <br> Assistant Rowing Coach</td>
-      <td style = "border-bottom-width:0;"><img src="{{site.baseurl}}/assets/images/gather.png" alt="gather" width="60"></td>
+      <td style = "border-bottom-width:0;"><img src="{{site.baseurl}}/bre_images/scrc_logo.jpeg" alt="gather" width="60"></td>
       <td style = "border-bottom-width:0;">
       <strong>Steel City Rowing Club</strong> <br> 05/2021 - Present <br> Varsity Youth Rowing Coach</td>
     </tr>
