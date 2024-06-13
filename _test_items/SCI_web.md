@@ -5,11 +5,11 @@ key: 1
 toc: true
 excerpt: "Python, Database Creation and Management, Web Desgin"
 header:
-  teaser: /assets/images/saltbot.gif
+  teaser: /bre_images/sci_design.png
 classes: wide
 ---
 ## Featured Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tb6XYFM1r3c?si=1y1yYJZhaTsBZS6s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TyzVoNQBR9M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Group Members 
 This project is a group effort with including Samantha Aziz, Chang Li and Breanna Burns.
@@ -28,7 +28,7 @@ Our front-end was developed using HTML, enhanced with the Jinja2 templating engi
 The back-end was built with Python Flask, leveraging PyMySQL for efficient SQL query execution, simplifying database interactions and overall system functionality.
 
 ## Database Structure
-![Database](bre_images/sci_database.png)
+![Database](/bre_images/sci_database.png)
 
 ## Database Tables
 Our database schema is designed to manage both device information and loan management efficiently. The tables are structured as follows:
@@ -89,11 +89,11 @@ Our equipment management system is designed to allow users to efficiently manage
   In addition to adding and editing inventory, we implemented a user-friendly system to easily view the inventory and retrieve necessary information. This is achieved through a set of two pages:
   - **Device Inventory Page**: This page presents each item in the database along with its name and device type. It includes a search function that allows users to filter devices based on type, building location, or both, facilitating easy navigation through a growing database.
 
-  ![Inventory](bre_images/sci_inven.png)
+  ![Inventory](/bre_images/sci_inven.png)
 
   - **Device View Page**: Accessible via the action button on the inventory page, this page provides a detailed breakdown of all information stored in the database for an individual item. This allows users to thoroughly understand the specifics of each item to ensure it meets their requirements.
 
-  ![View](bre_images/sci_view.png)
+  ![View](/bre_images/sci_view.png)
 
 By incorporating these features, our equipment management system ensures efficient and user-friendly management of devices and their associated data.
 
@@ -116,7 +116,7 @@ When users log in, their roles and personal information (such as name and email)
 ## Design
 For the design aspect of our project, we aimed for seamless integration with the current Pitt system. To achieve this, we used existing university websites as references to create our main template and menu, ensuring a cohesive look and feel. Our design choices were driven by the goal of maintaining consistency and user familiarity within the Pitt environment.
 
-![Design](bre_images/sci_design.png)
+![Design](/bre_images/sci_design.png)
 
 
 
