@@ -39,7 +39,7 @@ The SQL code below sets up the schema and tables required for the ArborDB applic
 
 ### Create Tables
 
-![Table Diagram](/bre_images/arborDB_ER.png)
+![Table Diagram]({{ site.url }}{{ site.baseurl }}/bre_images/arborDB_ER.png)
 
 1. **FOREST:**
    - Stores forest details including boundaries, area, and acid level.
@@ -77,7 +77,7 @@ The SQL code below sets up the schema and tables required for the ArborDB applic
 12. **Clock:**
     - Manages synthetic time for the system, initialized to September 1, 2023.
 
-![Schema ER Diagram](/bre_images/arborDB_diagram.png)
+![Schema ER Diagram]({{ site.url }}{{ site.baseurl }}/bre_images/arborDB_diagram.png)
 
 ### Create Domains
 

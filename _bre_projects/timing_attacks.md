@@ -25,7 +25,7 @@ Initial tests with small numbers showed similar results, but issues arose with l
 
 #### Results
 
-![Naive Algorithm](/bre_images/ti_at_naive.png)
+![Naive Algorithm]({{ site.url }}{{ site.baseurl }}/bre_images/ti_at_naive.png)
 
 | Num of bits | Mean      | Variance   | St Dev  |
 |-------------|-----------|------------|---------|
@@ -44,7 +44,7 @@ I conducted the same tests on the constant-time algorithm as the naive implement
 
 #### Results
 
-![Constant Algorithm](/bre_images/ti_at_const.png)
+![Constant Algorithm]({{ site.url }}{{ site.baseurl }}/bre_images/ti_at_const.png)
 
 | Num of Bits | Mean (secs) | Variance       | St Dev  |
 |-------------|--------------|----------------|---------|
@@ -64,7 +64,7 @@ The masking algorithm underwent the same tests, and results were compared to the
 
 #### Results
 
-![Masking Algorithm](/bre_images/ti_at_mask.png)
+![Masking Algorithm]({{ site.url }}{{ site.baseurl }}/bre_images/ti_at_mask.png)
 
 | Num of Bits | Mean       | Variance       | St Dev  |
 |-------------|------------|----------------|---------|

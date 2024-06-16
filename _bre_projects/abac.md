@@ -50,7 +50,7 @@ My base program, `foren_abac_adv.py`, reads and parses a file (`foren_abac_file.
   - Utilizes `evaluate_access_query()` to process the query.
   - Offers an option to check another query or exit.
 
-![Database](/bre_images/abac_basic.png)
+![Database]({{ site.url }}{{ site.baseurl }}/bre_images/abac_basic.png)
 
 ## Policy File Syntax
 
@@ -89,14 +89,14 @@ The policy file is divided into sections labeled for parsing:
 - **Benefits:** Flexibility, efficiency.
 - **Drawbacks:** Increased complexity, potential security risks.
 
-![Database](/bre_images/abac_AD.png)
+![Database]({{ site.url }}{{ site.baseurl }}/bre_images/abac_AD.png)
 
 ### Role Inheritance
 - **Concept:** Establish parent-child relationships between roles.
 - **Benefits:** Simplifies access control management, ensures consistency.
 - **Drawbacks:** Potential for ambiguity and over-privilege.
 
-![Database](/bre_images/abac_RI.png)
+![Database]({{ site.url }}{{ site.baseurl }}/bre_images/abac_RI.png)
 
 ## Timing and Random Generation Program
 
