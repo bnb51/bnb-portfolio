@@ -5,7 +5,7 @@ key: 1
 toc: true
 excerpt: "Python, Database Creation and Management, Web Desgin"
 header:
-  teaser: /bre_images/sci_design.png
+  teaser: /bre_images/sci-teaser.png
 classes: wide
 ---
 ## Featured Video
