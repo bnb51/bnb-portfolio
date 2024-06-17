@@ -59,7 +59,7 @@ plugins:
 
 author:
   name   : "Breanna Burns"
-  avatar : "/assets/images/bre_headshot.png"
+  avatar : "/assets/images/bre_headshot.PNG"
   bio    : "BS Computer Science Graduate from Pitt"
   links:
     - label: "Pittsburgh, PA"
