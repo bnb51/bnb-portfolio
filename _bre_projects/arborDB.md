@@ -3,7 +3,7 @@ title: "ArborDB Database Management System"
 author_profile: true
 key: 1
 toc: true
-excerpt: "Java, PostgresSQL, Database Management"
+excerpt: "Java, PostgreSQL, Database Management"
 header:
   teaser: /bre_images/arborDB_diagram.png
 classes: wide
@@ -39,7 +39,7 @@ The SQL code below sets up the schema and tables required for the ArborDB applic
 
 ### Create Tables
 
-![Table Diagram]({{ site.url }}{{ site.baseurl }}/bre_images/arborDB_ER.png)
+![Table Diagram]({{site.url}}{{site.baseurl}}/bre_images/arborDB_ER.png)
 
 1. **FOREST:**
    - Stores forest details including boundaries, area, and acid level.
